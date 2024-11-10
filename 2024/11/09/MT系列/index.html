@@ -26,7 +26,7 @@
 <meta property="og:description" content="Paper List  Temporal Ensembling for Semi-Supervised Learning [1] + Mean teachers are better role models: Weight-averaged consistency targets improve semi-supervised deep learning results [2] +  + Se">
 <meta property="og:locale">
 <meta property="article:published_time" content="2024-11-10T01:48:10.000Z">
-<meta property="article:modified_time" content="2024-11-10T09:52:10.573Z">
+<meta property="article:modified_time" content="2024-11-10T10:21:54.891Z">
 <meta property="article:author" content="xxt">
 <meta property="article:tag" content="papers">
 <meta name="twitter:card" content="summary">
@@ -267,7 +267,7 @@ mjx-container[display="true"] + br {
                                    href="/"
                                         >
                                     <i class="fa-regular fa-house fa-fw"></i>
-                                    首页
+                                    HOME
                                     
                                 </a>
 
@@ -301,7 +301,7 @@ mjx-container[display="true"] + br {
                            href="/"
                         >
                             <span>
-                                首页
+                                HOME
                             </span>
                             
                                 <i class="fa-regular fa-house fa-sm fa-fw"></i>
@@ -320,15 +320,15 @@ mjx-container[display="true"] + br {
         <div class="statistics flex justify-around my-2.5">
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
         <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">4</div>
-        <div class="label text-third-text-color text-sm">标签</div>
+        <div class="label text-third-text-color text-sm">Tags</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
         <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">0</div>
-        <div class="label text-third-text-color text-sm">分类</div>
+        <div class="label text-third-text-color text-sm">Categories</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
         <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">5</div>
-        <div class="label text-third-text-color text-sm">文章</div>
+        <div class="label text-third-text-color text-sm">Posts</div>
     </a>
 </div>
     </div>
@@ -347,263 +347,351 @@ mjx-container[display="true"] + br {
             <div class="main-content">
 
                 
-                    @import '../common/variables'
+                    <div class="post-page-container flex relative justify-between box-border w-full h-full">
+    <div class="article-content-container">
 
-$arrow-icon-width = 16px
-$post-nav-max-width = 220px
-$article-title-font-size = 3.2rem
-$temp-toc-width = hexo-config('global.sidebar_width')
-$toc-container-width = $temp-toc-width ? convert($temp-toc-width) : 210px
-$without-toc-container-width = calc(100% - $temp-toc-width)
-$gap = 30px
+        <div class="article-title relative w-full">
+            
+                <div class="w-full flex items-center pt-6 justify-start">
+                    <h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">MT系列</h1>
+                </div>
+            
+            </div>
 
-.post-page-container
-  gap 0px
+        
+            <div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+                <div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+                    <img src="/images/redefine-avatar.svg">
+                </div>
+                <div class="info flex flex-col justify-between">
+                    <div class="author flex items-center">
+                        <span class="name text-default-text-color text-lg font-semibold">xxt</span>
+                        
+                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv1</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2024-11-10 01:48:10</span>
+        <span class="mobile">2024-11-10 01:48:10</span>
+        <span class="hover-info">Created</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2024-11-10 10:21:54</span>
+            <span class="mobile">2024-11-10 10:21:54</span>
+            <span class="hover-info">Updated</span>
+        </span>
+    
 
-  +redefine-mobile()
-    overflow-x hidden
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/papers/">papers</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        
 
 
-  &.show-toc
-    gap 30px
+        <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+            <h3 id="paper-list">Paper List</h3>
+<ul>
+<li>Temporal Ensembling for Semi-Supervised Learning <sup class="refplus-num"><a href="#ref-Link1">[1]</a></sup>
++ Mean teachers are better role models: Weight-averaged consistency targets improve semi-supervised deep learning results <sup class="refplus-num"><a href="#ref-Link2">[2]</a></sup>
++ 
++ Semi-supervised Medical Image Segmentation through Dual-task Consistency <sup class="refplus-num"><a href="#ref-Link4">[3]</a></sup>
++ Switching Temporary Teachers for Semi-Supervised Semantic Segmentation <sup class="refplus-num"><a href="#ref-Link5">[4]</a></sup>
++ 
+## Article 1
 
-    .toc-content-container
-      display block
-      opacity 1
-      transition opacity 0.2s ease-in 0.2s
-      width $toc-container-width
+self-ensembling-在训练网络不同的epoch中，使用不同的正则化和数据增广方法，为unlabeled取得“共识”.
 
-      &:hover::-webkit-scrollbar-thumb
-        border 3px solid rgba(183, 183, 183, 0.3)
+semi-supervised learning- 仅有部分训练数据有标签
 
-      &::-webkit-scrollbar
-        width 6px
-        height 6px
-        transition all 0.2s ease
-        display block
+transform/stability loss-在另一篇论文里被提出，但与本文的方法相似。对每个小批量不同扰动n次，算总和loss。延续了general pseudo-ensemble agreement (PEA) regular
+ization framework of Bachman et al. (2014)与mutual exclusivity loss
+ term (Sajjadi et al., 2016a) 。本文可视作n=2的情况。
 
-      &::-webkit-scrollbar-track
-        background transparent
-        border none
+Π-model &amp; Temporal-ensembling
 
-      &::-webkit-scrollbar-thumb
-        border-radius 20px
-        border 3px solid rgba(183, 183, 183, 0)
-        transition all 0.2s ease
+![](Π-model.jpg)
 
-    .article-content-container
-      width calc(100% - 210px) !important
+(1) Π-model
 
-  +redefine-tablet()
-    .toc-content-container
-      display none !important
+对一批数据,同时含有无标签xi和有标签(xi,yi),两个分支同时输入经过不同增广处理和dropout设置的xi.得到最终结果y~i.
 
-    .article-content-container
-      width 100% !important
+对于有标签数据，损失函数由两部分构成：y~i与yi的cross-entropy loss与两个y~i之间的MSE.无标签数据仅有后者. 损失函数的权重w(t),为一个ramp up函数所定，随着时间逐渐增大（否则，模型得不到足够的来自有标签数据的有用信息。
 
-    &.show-toc
-      .toc-content-container
-        display none
+相似的模型：Γ-model.但该模型的一个分支不经过增广处理
 
-      .article-content-container
-        width 100% !important
+(2) Temporal-ensembling
 
-  .article-content-container
-    width 100%
-    transition width 0.2s ease
-    redefine-container(
-      false,
-      0,
-      0,
-      0,
-      30px
-    )
+上述的Π-model可以大致看成是先对training set得到一个结果，并不更新参数，再使用相同的数据经过不同的数据增广和dropout得到被扰乱的预测结果。对这两个结果进行损失计算。但该模型的缺陷是会十分吵闹（？）
 
-    +redefine-mobile()
-      padding 1.2rem 0.2rem
-      box-shadow none !important
-      max-width 100vw
+随时间集成将过去的预测合并（ensemble）, 更新方式如下
 
-    .article-header .avatar img
-          border-radius: $redefine-border-radius-medium * 0.87
-          width 100%
-          height 100%
-          // background var(--avatar-background-color)
+![](tem-ensem.jpg)
 
-    .article-header, .article-header-meta-info
-      margin-top 16px
+Z,z 初始化为0，慢慢向上加
 
-      +redefine-tablet()
-        transform scale(0.9)
-        transform-origin left top
+好处：快，一个epoch只需要过一遍数据集
 
-    .article-content
-      margin-top $spacing-unit
-      padding-bottom 10px
-      word-wrap break-word
-      border-bottom 1px solid var(--border-color)
-      color var(--default-text-color)
+坏处：数据量大的时候会很慢（az）
 
-      &>:first-child
-        margin-top 0 !important
+start-up bias:没有看懂，来自于Adam
 
-    .article-prev, .article-next
+(3) Possible future work
 
-        a
-          position relative
-          display block
-          width 100%
-          height 100%
-          box-sizing border-box
+![](futurework.jpg)
 
-          &.prev
-            padding-left $arrow-icon-width
+由于运行过程中会存储每个minibatch在每个epoch的预测结果，所以可能可以加上一个方差正则化项来评估模型的确定性
 
-          &.next
-            padding-right $arrow-icon-width
+second raw moment-在Adam里似乎提到过，但不太记得了。
 
-          .arrow-icon
-            position absolute
-            top 0
-            height 100%
-            width $arrow-icon-width
+## Article 2
 
-            &.left
-              left 0
+Temporal ensembling的本质是对每个训练样本的预测结果进行指数平滑(exponential moving
+ average). 本文首次引入 **Mean Teacher**, 将模型的参数进行指数平滑。
 
-            &.right
-              right 0
+共识：a classification model should favor functions that give consistent output for similar data points
 
-          .title
-            width 100%
-            height 100%
+![](mt.jpg)
 
-      .post-nav-item
-        display none
+一个training batch，先更新学生的参数，再指数平滑到老师上去。
 
-        +redefine-tablet()
-          display inline-block
+## Article 3
 
-      .post-nav-title-item
-        overflow hidden
-        text-overflow ellipsis
-        white-space nowrap
+![](noisystu.jpg)
 
-        +redefine-tablet()
-          display none
+先用有标注数据训练teacher，训练完的teacher为无标注生成伪标签（soft/hard）
+让学生在所有数据上（使用teacher的伪标签）训练，加上noise（augmentaion/dropout/stochastic depth），让该学生成为下一轮的老师。该学生的预测数据成为下一轮的伪标签。
 
-    .recommended-article
-      overflow visible !important
+knowledge distillation/expansion-
 
-      .recommended-mobile
-        display none
-        +redefine-tablet()
-          display block
+datafiltering-
 
-      .recommended-desktop
-        display block
-        +redefine-tablet()
-          display none
+balancing-
 
-      .recommended-article-group
-        padding 10px 0
-        display flex
-        justify-content space-between
-        flex-wrap wrap
-        overflow visible !important
+## Article 4
 
-        @media screen and (max-width $device-tablet)
-          height 190px
-          overflow scroll
+此篇开始进入医学影像处理。
 
-          &::-webkit-scrollbar
-            width 0 !important
+![](medical1.jpg)
 
-          -ms-overflow-style none
+Dual-task体现在？在VNet的末端加上不同的输出层，一个f1生成pixel-wise map，另一f2为水平集函数，通过某种变换可以比较。
 
-        .recommended-article-item
-          redefine-container(
-            false,
-            0,
-            0,
-            10px,
-            0
-          )
-          box-shadow var(--redefine-box-shadow-flat)
-          padding 12px !important
-          display flex
-          flex-wrap wrap
-          align-content center
-          justify-content center
-          align-items center
-          overflow hidden
-          width 32%
-          max-height 200px
-          margin-top: $gap * 0.5
-          margin-right 0
+L_DTC为f1与转化后的f2的MSE（有权重），L_LSF为反之。L_Seg为f1与真实标签的Dice loss
 
-          +redefine-tablet()
-            width 49%
+本质上是consistency loss，对同一个网络的参数进行不同形式的输出，确保模型的稳定性，
 
-          img
-            display flex
-            width calc(100% + 24px)
-            height 150px
-            object-fit cover
-            border-radius $redefine-border-radius-medium-top
-            margin -12px -12px 0 -12px !important
+## Article 5
 
-          span
-            margin-top 0.5rem
-            display block
-            display -webkit-box
-            -webkit-box-orient vertical
-            -webkit-line-clamp 1
-            overflow hidden
+![](dualt.jpg)
 
-  .toc-content-container
-    white-space nowrap
-    opacity 0
-    position sticky
-    top: $navbar-height + $spacing-unit
-    // border-radius $redefine-border-radius-large
-    border-radius $redefine-border-radius-none
-    // display none
-    // visibility hidden
-    // width $toc-container-width
-    width 0
-    height auto
-    max-height calc(100vh - 210px)
-    //margin-left 30px
-    // z-index $z-index-6
-    overflow-y auto
-    overflow-x hidden
-    float right
-    padding 10px
-    box-sizing border-box
-    box-shadow none !important
-    transition opacity 0.3s ease-out 0.3s
-    hover-style(
-      false,
-      0,
-      0
-    )
-    transition-t('display', '0', '0.3', 'ease-out')
+单个MT的coupling problem
 
-    +redefine-tablet()
-      left 0 !important
-      display none !important
+每个epoch：对学生进行不同的augmentation（from the pool）
 
-  figure.image-caption
-    img
-      margin-bottom 0
 
-    figcaption
-      margin-top 5px
-      margin-bottom 10px
-      text-align center
-      font-size 0.9rem
-      color var(--third-text-color)
+
+
+
+<ul id="refplus"><li id="ref-Link1" data-num="1">[1]  https://arxiv.org/abs/1610.02242</li><li id="ref-Link2" data-num="2">[2]  https://arxiv.org/abs/1703.01780</li><li id="ref-Link4" data-num="3">[3]  https://arxiv.org/pdf/2009.04448</li><li id="ref-Link5" data-num="4">[4]  https://proceedings.neurips.cc/paper_files/paper/2023/file/7eeb42802d3750ca59e8a0523068e9e6-Paper-Conference.pdf</li></ul></li>
+</ul>
+
+    <style>
+    #refplus, #refplus li{ 
+        padding:0;
+        margin:0;
+        list-style:none;
+    }；
+    </style>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    <script>
+    document.querySelectorAll(".refplus-num").forEach((ref) => {
+        let refid = ref.firstChild.href.replace(location.origin+location.pathname,'');
+        let refel = document.querySelector(refid);
+        let refnum = refel.dataset.num;
+        let ref_content = refel.innerText.replace(`[${refnum}]`,'');
+        tippy(ref, {
+            content: ref_content,
+        });
+    });
+    </script>
+    
+        </div>
+
+        
+            <div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li><strong>Title:</strong> MT系列</li>
+        <li><strong>Author:</strong> xxt</li>
+        <li><strong>Created at
+                :</strong> 2024-11-10 01:48:10</li>
+        
+            <li>
+                <strong>Updated at
+                    :</strong> 2024-11-10 10:21:54
+            </li>
+        
+        <li>
+            <strong>Link:</strong> https://theohno325.github.io/2024/11/09/MT系列/
+        </li>
+        <li>
+            <strong>
+                License:
+            </strong>
+            
+
+            
+                This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a>.
+            
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
+                
+                    <li class="tag-item mx-0.5">
+                        <a href="/tags/papers/">#papers</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+
+        
+            <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+                
+                    <div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="prev"
+                        rel="prev"
+                        href="/2024/11/09/%E7%B2%BE%E7%A5%9E%E7%8A%B6%E6%80%81/"
+                        >
+                            <span class="left arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">精神状态</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="next"
+                        rel="next"
+                        href="/2024/11/07/mathnotes/"
+                        >
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">Mathnotes</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+
+        
+            <div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
+                <div class="comments-container mt-10 w-full ">
+    <div id="comment-anchor" class="w-full h-2.5"></div>
+    <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
+        Comments
+    </div>
+    
+
+        
+            
+    <div id="waline"></div>
+    <script type="module" data-swup-reload-script>
+      import { init } from '/js/libs/waline.mjs';
+
+      function loadWaline() {
+        init({
+          el: '#waline',
+          serverURL: 'https://example.example.com',
+          lang: 'zh-CN',
+          dark: 'body[class~="dark-mode"]',
+          reaction: false,
+          requiredMeta: ['nick', 'mail'],
+          emoji: [],
+          
+          
+        });
+      }
+
+      if (typeof swup !== 'undefined') {
+        loadWaline();
+      } else {
+        window.addEventListener('DOMContentLoaded', loadWaline);
+      }
+    </script>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+
+    
+        <div class="toc-content-container">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">On this page</div>
+        <div class="page-title">MT系列</div>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#paper-list"><span class="nav-text">Paper List</span></a></li></ol>
+
+    </div>
+</div>
+        </div>
+    
+</div>
+
+
 
                 
 
@@ -628,7 +716,7 @@ $gap = 30px
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        共撰写了 5 篇文章
+                        5 posts in total
                     </span>
                     
                 </p>
@@ -639,26 +727,26 @@ $gap = 30px
             <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
                 
                     <span id="busuanzi_container_site_uv" class="lg:!block">
-                        <span class="text-sm">访问人数</span>
+                        <span class="text-sm">VISITOR COUNT</span>
                         <span id="busuanzi_value_site_uv"></span>
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv" class="lg:!block">
-                        <span class="text-sm">总访问量</span>
+                        <span class="text-sm">TOTAL PAGE VIEWS</span>
                         <span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
-            <span class="lg:block text-sm">由 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a> 驱动</span>
-            <span class="text-sm lg:block">主题&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.7.3</a></span>
+            <span class="lg:block text-sm">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a></span>
+            <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.7.3</a></span>
         </div>
         
         
             <div>
-                博客已运行 <span class="odometer" id="runtime_days" ></span> 天 <span class="odometer" id="runtime_hours"></span> 小时 <span class="odometer" id="runtime_minutes"></span> 分钟 <span class="odometer" id="runtime_seconds"></span> 秒
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
             </div>
         
         

@@ -18,18 +18,26 @@
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="Paper List  Temporal Ensembling for Semi-Supervised Learning [1] + Mean teachers are better role models: Weight-averaged consistency targets improve semi-supervised deep learning results [2] +  + Se">
+        <meta name="description" content="[Paper List]                               Temporal Ensembling for Semi-Supervised Learning[1]Mean teachers are better role models: Weight-averaged consistencytargets improve semi-supervised deep">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MT系列">
 <meta property="og:url" content="http://theohno325.github.io/2024/11/09/MT%E7%B3%BB%E5%88%97/index.html">
 <meta property="og:site_name" content="Cu(NO3)2">
-<meta property="og:description" content="Paper List  Temporal Ensembling for Semi-Supervised Learning [1] + Mean teachers are better role models: Weight-averaged consistency targets improve semi-supervised deep learning results [2] +  + Se">
+<meta property="og:description" content="[Paper List]                               Temporal Ensembling for Semi-Supervised Learning[1]Mean teachers are better role models: Weight-averaged consistencytargets improve semi-supervised deep">
 <meta property="og:locale">
+<meta property="og:image" content="http://theohno325.github.io/2024/11/09/MT%E7%B3%BB%E5%88%97/%CE%A0-model.jpg">
+<meta property="og:image" content="http://theohno325.github.io/2024/11/09/MT%E7%B3%BB%E5%88%97/tem-ensem.jpg">
+<meta property="og:image" content="http://theohno325.github.io/2024/11/09/MT%E7%B3%BB%E5%88%97/futurework.jpg">
+<meta property="og:image" content="http://theohno325.github.io/2024/11/09/MT%E7%B3%BB%E5%88%97/mt.jpg">
+<meta property="og:image" content="http://theohno325.github.io/2024/11/09/MT%E7%B3%BB%E5%88%97/noisystu.jpg">
+<meta property="og:image" content="http://theohno325.github.io/2024/11/09/MT%E7%B3%BB%E5%88%97/medical1.jpg">
+<meta property="og:image" content="http://theohno325.github.io/2024/11/09/MT%E7%B3%BB%E5%88%97/dualt.jpg">
 <meta property="article:published_time" content="2024-11-10T01:48:10.000Z">
-<meta property="article:modified_time" content="2024-11-10T10:37:05.397Z">
+<meta property="article:modified_time" content="2024-11-10T10:40:24.542Z">
 <meta property="article:author" content="xxt">
 <meta property="article:tag" content="papers">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://theohno325.github.io/2024/11/09/MT%E7%B3%BB%E5%88%97/%CE%A0-model.jpg">
     
     
     <!--- Icon Part-->
@@ -267,7 +275,7 @@ mjx-container[display="true"] + br {
                                    href="/"
                                         >
                                     <i class="fa-regular fa-house fa-fw"></i>
-                                    HOME
+                                    トップページ
                                     
                                 </a>
 
@@ -301,7 +309,7 @@ mjx-container[display="true"] + br {
                            href="/"
                         >
                             <span>
-                                HOME
+                                トップページ
                             </span>
                             
                                 <i class="fa-regular fa-house fa-sm fa-fw"></i>
@@ -320,15 +328,15 @@ mjx-container[display="true"] + br {
         <div class="statistics flex justify-around my-2.5">
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
         <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">4</div>
-        <div class="label text-third-text-color text-sm">Tags</div>
+        <div class="label text-third-text-color text-sm">タグ</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
         <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">0</div>
-        <div class="label text-third-text-color text-sm">Categories</div>
+        <div class="label text-third-text-color text-sm">分類</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
         <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">5</div>
-        <div class="label text-third-text-color text-sm">Posts</div>
+        <div class="label text-third-text-color text-sm">記事</div>
     </a>
 </div>
     </div>
@@ -376,14 +384,14 @@ mjx-container[display="true"] + br {
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
         <span class="desktop">2024-11-10 01:48:10</span>
         <span class="mobile">2024-11-10 01:48:10</span>
-        <span class="hover-info">Created</span>
+        <span class="hover-info">作成</span>
     </span>
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-11-10 10:37:05</span>
-            <span class="mobile">2024-11-10 10:37:05</span>
-            <span class="hover-info">Updated</span>
+            <span class="desktop">2024-11-10 10:40:24</span>
+            <span class="mobile">2024-11-10 10:40:24</span>
+            <span class="hover-info">更新</span>
         </span>
     
 
@@ -420,114 +428,80 @@ mjx-container[display="true"] + br {
 
 
         <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
-            <h3 id="paper-list">Paper List</h3>
-<ul>
-<li>Temporal Ensembling for Semi-Supervised Learning <sup class="refplus-num"><a href="#ref-Link1">[1]</a></sup>
-+ Mean teachers are better role models: Weight-averaged consistency targets improve semi-supervised deep learning results <sup class="refplus-num"><a href="#ref-Link2">[2]</a></sup>
-+ 
-+ Semi-supervised Medical Image Segmentation through Dual-task Consistency <sup class="refplus-num"><a href="#ref-Link4">[3]</a></sup>
-+ Switching Temporary Teachers for Semi-Supervised Semantic Segmentation <sup class="refplus-num"><a href="#ref-Link5">[4]</a></sup>
-+ 
-## Article 1
-
-self-ensembling-在训练网络不同的epoch中，使用不同的正则化和数据增广方法，为unlabeled取得“共识”.
-
-semi-supervised learning- 仅有部分训练数据有标签
-
-transform/stability loss-在另一篇论文里被提出，但与本文的方法相似。对每个小批量不同扰动n次，算总和loss。延续了general pseudo-ensemble agreement (PEA) regular
-ization framework of Bachman et al. (2014)与mutual exclusivity loss
- term (Sajjadi et al., 2016a) 。本文可视作n=2的情况。
-
-Π-model &amp; Temporal-ensembling
-
-![](Π-model.jpg)
-
-(1) Π-model
-
-对一批数据,同时含有无标签xi和有标签(xi,yi),两个分支同时输入经过不同增广处理和dropout设置的xi.得到最终结果y~i.
-
-对于有标签数据，损失函数由两部分构成：y~i与yi的cross-entropy loss与两个y~i之间的MSE.无标签数据仅有后者. 损失函数的权重w(t),为一个ramp up函数所定，随着时间逐渐增大（否则，模型得不到足够的来自有标签数据的有用信息。
-
-相似的模型：Γ-model.但该模型的一个分支不经过增广处理
-
-(2) Temporal-ensembling
-
-上述的Π-model可以大致看成是先对training set得到一个结果，并不更新参数，再使用相同的数据经过不同的数据增广和dropout得到被扰乱的预测结果。对这两个结果进行损失计算。但该模型的缺陷是会十分吵闹（？）
-
-随时间集成将过去的预测合并（ensemble）, 更新方式如下
-
-![](tem-ensem.jpg)
-
-Z,z 初始化为0，慢慢向上加
-
-好处：快，一个epoch只需要过一遍数据集
-
-坏处：数据量大的时候会很慢（az）
-
-start-up bias:没有看懂，来自于Adam
-
-(3) Possible future work
-
-![](futurework.jpg)
-
-由于运行过程中会存储每个minibatch在每个epoch的预测结果，所以可能可以加上一个方差正则化项来评估模型的确定性
-
-second raw moment-在Adam里似乎提到过，但不太记得了。
-
-## Article 2
-
-Temporal ensembling的本质是对每个训练样本的预测结果进行指数平滑(exponential moving
- average). 本文首次引入 **Mean Teacher**, 将模型的参数进行指数平滑。
-
-共识：a classification model should favor functions that give consistent output for similar data points
-
-![](mt.jpg)
-
-一个training batch，先更新学生的参数，再指数平滑到老师上去。
-
-## Article 3
-
-![](noisystu.jpg)
-
-先用有标注数据训练teacher，训练完的teacher为无标注生成伪标签（soft/hard）
-让学生在所有数据上（使用teacher的伪标签）训练，加上noise（augmentaion/dropout/stochastic depth），让该学生成为下一轮的老师。该学生的预测数据成为下一轮的伪标签。
-
-knowledge distillation/expansion-
-
-datafiltering-
-
-balancing-
-
-## Article 4
-
-此篇开始进入医学影像处理。
-
-![](medical1.jpg)
-
-Dual-task体现在？在VNet的末端加上不同的输出层，一个f1生成pixel-wise map，另一f2为水平集函数，通过某种变换可以比较。
-
-L_DTC为f1与转化后的f2的MSE（有权重），L_LSF为反之。L_Seg为f1与真实标签的Dice loss
-
-本质上是consistency loss，对同一个网络的参数进行不同形式的输出，确保模型的稳定性，
-
-## Article 5
-
-![](dualt.jpg)
-
-单个MT的coupling problem
-
-每个epoch：对学生进行不同的augmentation（from the pool），轮流给两个teacher喂给参数
-
-【os：感觉看的不是很懂……两个teacher的伪标签如何生成和选择，轮流喂参数能否确保单个teacher的多样性，照理来说，应该两个teacher能够反映不同侧面的特征才对】
-
-## Article 6
-
-
-
-
-
-<ul id="refplus"><li id="ref-Link1" data-num="1">[1]  https://arxiv.org/abs/1610.02242</li><li id="ref-Link2" data-num="2">[2]  https://arxiv.org/abs/1703.01780</li><li id="ref-Link4" data-num="3">[3]  https://arxiv.org/pdf/2009.04448</li><li id="ref-Link5" data-num="4">[4]  https://proceedings.neurips.cc/paper_files/paper/2023/file/7eeb42802d3750ca59e8a0523068e9e6-Paper-Conference.pdf</li><li id="ref-Link6" data-num="5">[5]  https://openaccess.thecvf.com/content/CVPR2023/papers/Wang_MCF_Mutual_Correction_Framework_for_Semi-Supervised_Medical_Image_Segmentation_CVPR_2023_paper.pdf</li></ul></li>
-</ul>
+            <details class="[red]" data-header-exclude=""><summary><i class="fa-solid fa-chevron-right"></i>[Paper List] </summary>
+              <div class="content">
+              <ul><li>Temporal Ensembling for Semi-Supervised Learning<sup class="refplus-num"><a href="#ref-Link1">[1]</a></sup></li><li>Mean teachers are better role models: Weight-averaged consistencytargets improve semi-supervised deep learning results<sup class="refplus-num"><a href="#ref-Link2">[2]</a></sup></li><li></li><li>Semi-supervised Medical Image Segmentation through Dual-taskConsistency<sup class="refplus-num"><a href="#ref-Link4">[3]</a></sup></li><li>Switching Temporary Teachers for Semi-Supervised SemanticSegmentation<sup class="refplus-num"><a href="#ref-Link5">[4]</a></sup></li><li>MCF:Mutual Correction Framework for Semi-Supervised Medical ImageSegmentation<sup class="refplus-num"><a href="#ref-Link6">[5]</a></sup></li></ul>
+              </div>
+            </details>
+<h2 id="article-1">Article 1</h2>
+<p>self-ensembling-在训练网络不同的epoch中，使用不同的正则化和数据增广方法，为unlabeled取得“共识”.</p>
+<p>semi-supervised learning- 仅有部分训练数据有标签</p>
+<p>transform/stability
+loss-在另一篇论文里被提出，但与本文的方法相似。对每个小批量不同扰动n次，算总和loss。延续了general
+pseudo-ensemble agreement (PEA) regular ization framework of Bachman et
+al. (2014)与mutual exclusivity loss term (Sajjadi et al., 2016a)
+。本文可视作n=2的情况。</p>
+<p>Π-model &amp; Temporal-ensembling</p>
+<p><img lazyload="" src="/images/loading.svg" data-src="Π-model.jpg"></p>
+<ol type="1">
+<li>Π-model</li>
+</ol>
+<p>对一批数据,同时含有无标签xi和有标签(xi,yi),两个分支同时输入经过不同增广处理和dropout设置的xi.得到最终结果y~i.</p>
+<p>对于有标签数据，损失函数由两部分构成：y~i与yi的cross-entropy
+loss与两个y~i之间的MSE.无标签数据仅有后者. 损失函数的权重w(t),为一个ramp
+up函数所定，随着时间逐渐增大（否则，模型得不到足够的来自有标签数据的有用信息。</p>
+<p>相似的模型：Γ-model.但该模型的一个分支不经过增广处理</p>
+<ol start="2" type="1">
+<li>Temporal-ensembling</li>
+</ol>
+<p>上述的Π-model可以大致看成是先对training
+set得到一个结果，并不更新参数，再使用相同的数据经过不同的数据增广和dropout得到被扰乱的预测结果。对这两个结果进行损失计算。但该模型的缺陷是会十分吵闹（？）</p>
+<p>随时间集成将过去的预测合并（ensemble）, 更新方式如下</p>
+<p><img lazyload="" src="/images/loading.svg" data-src="tem-ensem.jpg"></p>
+<p>Z,z 初始化为0，慢慢向上加</p>
+<p>好处：快，一个epoch只需要过一遍数据集</p>
+<p>坏处：数据量大的时候会很慢（az）</p>
+<p>start-up bias:没有看懂，来自于Adam</p>
+<ol start="3" type="1">
+<li>Possible future work</li>
+</ol>
+<p><img lazyload="" src="/images/loading.svg" data-src="futurework.jpg"></p>
+<p>由于运行过程中会存储每个minibatch在每个epoch的预测结果，所以可能可以加上一个方差正则化项来评估模型的确定性</p>
+<p>second raw moment-在Adam里似乎提到过，但不太记得了。</p>
+<h2 id="article-2">Article 2</h2>
+<p>Temporal
+ensembling的本质是对每个训练样本的预测结果进行指数平滑(exponential
+moving average). 本文首次引入 <strong>Mean Teacher</strong>,
+将模型的参数进行指数平滑。</p>
+<p>共识：a classification model should favor functions that give
+consistent output for similar data points</p>
+<p><img lazyload="" src="/images/loading.svg" data-src="mt.jpg"></p>
+<p>一个training batch，先更新学生的参数，再指数平滑到老师上去。</p>
+<h2 id="article-3">Article 3</h2>
+<p><img lazyload="" src="/images/loading.svg" data-src="noisystu.jpg"></p>
+<p>先用有标注数据训练teacher，训练完的teacher为无标注生成伪标签（soft/hard）
+让学生在所有数据上（使用teacher的伪标签）训练，加上noise（augmentaion/dropout/stochastic
+depth），让该学生成为下一轮的老师。该学生的预测数据成为下一轮的伪标签。</p>
+<p>knowledge distillation/expansion-</p>
+<p>datafiltering-</p>
+<p>balancing-</p>
+<h2 id="article-4">Article 4</h2>
+<p>此篇开始进入医学影像处理。</p>
+<p><img lazyload="" src="/images/loading.svg" data-src="medical1.jpg"></p>
+<p>Dual-task体现在？在VNet的末端加上不同的输出层，一个f1生成pixel-wise
+map，另一f2为水平集函数，通过某种变换可以比较。</p>
+<p>L_DTC为f1与转化后的f2的MSE（有权重），L_LSF为反之。L_Seg为f1与真实标签的Dice
+loss</p>
+<p>本质上是consistency
+loss，对同一个网络的参数进行不同形式的输出，确保模型的稳定性，</p>
+<h2 id="article-5">Article 5</h2>
+<p><img lazyload="" src="/images/loading.svg" data-src="dualt.jpg"></p>
+<p>单个MT的coupling problem</p>
+<p>每个epoch：对学生进行不同的augmentation（from the
+pool），轮流给两个teacher喂给参数</p>
+<p>【os：感觉看的不是很懂……两个teacher的伪标签如何生成和选择，轮流喂参数能否确保单个teacher的多样性，照理来说，应该两个teacher能够反映不同侧面的特征才对】</p>
+<h2 id="article-6">Article 6</h2>
+<ul id="refplus"><li id="ref-Link1" data-num="1">[1]  https://arxiv.org/abs/1610.02242</li><li id="ref-Link2" data-num="2">[2]  https://arxiv.org/abs/1703.01780</li><li id="ref-Link4" data-num="3">[3]  https://arxiv.org/pdf/2009.04448</li><li id="ref-Link5" data-num="4">[4]  https://proceedings.neurips.cc/paper_files/paper/2023/file/7eeb42802d3750ca59e8a0523068e9e6-Paper-Conference.pdf</li><li id="ref-Link6" data-num="5">[5]  https://openaccess.thecvf.com/content/CVPR2023/papers/Wang_MCF_Mutual_Correction_Framework_for_Semi-Supervised_Medical_Image_Segmentation_CVPR_2023_paper.pdf</li></ul>
 
     <style>
     #refplus, #refplus li{ 
@@ -556,27 +530,27 @@ L_DTC为f1与转化后的f2的MSE（有权重），L_LSF为反之。L_Seg为f1�
             <div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
                 <div class="article-copyright-info-container">
     <ul>
-        <li><strong>Title:</strong> MT系列</li>
-        <li><strong>Author:</strong> xxt</li>
-        <li><strong>Created at
+        <li><strong>タイトル:</strong> MT系列</li>
+        <li><strong>作者:</strong> xxt</li>
+        <li><strong>で作成されました
                 :</strong> 2024-11-10 01:48:10</li>
         
             <li>
-                <strong>Updated at
-                    :</strong> 2024-11-10 10:37:05
+                <strong>で更新されました
+                    :</strong> 2024-11-10 10:40:24
             </li>
         
         <li>
-            <strong>Link:</strong> https://theohno325.github.io/2024/11/09/MT系列/
+            <strong>リンク:</strong> https://theohno325.github.io/2024/11/09/MT系列/
         </li>
         <li>
             <strong>
-                License:
+                著作権宣言:
             </strong>
             
 
             
-                This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a>.
+                この文章は <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a> を使用して許可します。
             
         </li>
     </ul>
@@ -610,7 +584,7 @@ L_DTC为f1与转化后的f2的MSE（有权重），L_LSF为反之。L_Seg为f1�
                             </span>
                             <span class="title flex justify-center items-center">
                                 <span class="post-nav-title-item">精神状态</span>
-                                <span class="post-nav-item">Prev posts</span>
+                                <span class="post-nav-item">前一篇</span>
                             </span>
                         </a>
                     </div>
@@ -623,7 +597,7 @@ L_DTC为f1与转化后的f2的MSE（有权重），L_LSF为反之。L_Seg为f1�
                         >
                             <span class="title flex justify-center items-center">
                                 <span class="post-nav-title-item">Mathnotes</span>
-                                <span class="post-nav-item">Next posts</span>
+                                <span class="post-nav-item">次一篇</span>
                             </span>
                             <span class="right arrow-icon flex justify-center items-center">
                                 <i class="fa-solid fa-chevron-right"></i>
@@ -640,7 +614,7 @@ L_DTC为f1与转化后的f2的MSE（有权重），L_LSF为反之。L_Seg为f1�
                 <div class="comments-container mt-10 w-full ">
     <div id="comment-anchor" class="w-full h-2.5"></div>
     <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
-        Comments
+        コメント
     </div>
     
 
@@ -685,9 +659,9 @@ L_DTC为f1与转化后的f2的MSE（有权重），L_LSF为反之。L_Seg为f1�
         <div class="toc-content-container">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <div class="toc-title">On this page</div>
+        <div class="toc-title">目次</div>
         <div class="page-title">MT系列</div>
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#paper-list"><span class="nav-text">Paper List</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#article-1"><span class="nav-text">Article 1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#article-2"><span class="nav-text">Article 2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#article-3"><span class="nav-text">Article 3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#article-4"><span class="nav-text">Article 4</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#article-5"><span class="nav-text">Article 5</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#article-6"><span class="nav-text">Article 6</span></a></li></ol>
 
     </div>
 </div>
@@ -720,7 +694,7 @@ L_DTC为f1与转化后的f2的MSE（有权重），L_LSF为反之。L_Seg为f1�
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        5 posts in total
+                        共 5 記事
                     </span>
                     
                 </p>
@@ -731,26 +705,26 @@ L_DTC为f1与转化后的f2的MSE（有权重），L_LSF为反之。L_Seg为f1�
             <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
                 
                     <span id="busuanzi_container_site_uv" class="lg:!block">
-                        <span class="text-sm">VISITOR COUNT</span>
+                        <span class="text-sm">訪問者数</span>
                         <span id="busuanzi_value_site_uv"></span>
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv" class="lg:!block">
-                        <span class="text-sm">TOTAL PAGE VIEWS</span>
+                        <span class="text-sm">総アクセス数</span>
                         <span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
-            <span class="lg:block text-sm">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a></span>
-            <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.7.3</a></span>
+            <span class="lg:block text-sm"><?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a> で駆動する</span>
+            <span class="text-sm lg:block">テーマ&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.7.3</a></span>
         </div>
         
         
             <div>
-                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+                ブログが稼働する <span class="odometer" id="runtime_days" ></span> 日 <span class="odometer" id="runtime_hours"></span> 時間 <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> 秒
             </div>
         
         

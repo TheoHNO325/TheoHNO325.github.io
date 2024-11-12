@@ -26,7 +26,7 @@
 <meta property="og:description" content="4.3节 知识点 回顾内容：的解的情况与的关系 线性组合与线性表示 n维向量可以看作是n维空间中的一个向量，一些n维向量的线性组合可以形成一个新的空间  定理4.2.1 （线性方程组与线性相关的关系）：向量可由向量组a1-an线性表示  线性方程组有解；表示法有唯一或者无穷多两种情况，对应着方程组的解(k1-kn)的情况。 所以求线性表示方法（求k）的问题可以转化为求解线性方程组的">
 <meta property="og:locale">
 <meta property="article:published_time" content="2024-11-12T01:10:28.000Z">
-<meta property="article:modified_time" content="2024-11-12T10:50:07.550Z">
+<meta property="article:modified_time" content="2024-11-12T11:24:53.889Z">
 <meta property="article:author" content="xxt">
 <meta property="article:tag" content="study">
 <meta name="twitter:card" content="summary">
@@ -267,7 +267,7 @@ mjx-container[display="true"] + br {
                                    href="/"
                                         >
                                     <i class="fa-regular fa-house fa-fw"></i>
-                                    HOME
+                                    トップページ
                                     
                                 </a>
 
@@ -301,7 +301,7 @@ mjx-container[display="true"] + br {
                            href="/"
                         >
                             <span>
-                                HOME
+                                トップページ
                             </span>
                             
                                 <i class="fa-regular fa-house fa-sm fa-fw"></i>
@@ -320,15 +320,15 @@ mjx-container[display="true"] + br {
         <div class="statistics flex justify-around my-2.5">
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
         <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">6</div>
-        <div class="label text-third-text-color text-sm">Tags</div>
+        <div class="label text-third-text-color text-sm">タグ</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
         <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">0</div>
-        <div class="label text-third-text-color text-sm">Categories</div>
+        <div class="label text-third-text-color text-sm">分類</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
         <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">6</div>
-        <div class="label text-third-text-color text-sm">Posts</div>
+        <div class="label text-third-text-color text-sm">記事</div>
     </a>
 </div>
     </div>
@@ -376,14 +376,14 @@ mjx-container[display="true"] + br {
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
         <span class="desktop">2024-11-12 01:10:28</span>
         <span class="mobile">2024-11-12 01:10:28</span>
-        <span class="hover-info">Created</span>
+        <span class="hover-info">作成</span>
     </span>
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-11-12 10:50:07</span>
-            <span class="mobile">2024-11-12 10:50:07</span>
-            <span class="hover-info">Updated</span>
+            <span class="desktop">2024-11-12 11:24:53</span>
+            <span class="mobile">2024-11-12 11:24:53</span>
+            <span class="hover-info">更新</span>
         </span>
     
 
@@ -513,8 +513,19 @@ B2）</li>
 <p><strong>定理4.4.1</strong> 如果系数矩阵A(m x n)的秩r(A)&lt;
 n未知数的个数,则Ax=0肯定有非零解（也有基础解系）并且成员的个数是n-r个</p>
 <p>证明：想象把[A|0]化成阶梯性，则最底下有n-r行全是0，后n-r个未知数遂可以随便取，加权构成前r个，这些权重向量即为基础解系，因为它们把后n-r个未知量分别连接到了前r个。（看书）</p>
+<p>结构解的表示:</p>
+<p><span class="math display"><mjx-container class="MathJax" jax="SVG" display="true"><svg style="vertical-align: -0.464ex;" xmlns="http://www.w3.org/2000/svg" width="19.702ex" height="2.057ex" role="img" focusable="false" viewBox="0 -704 8708.2 909"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><path data-c="1D450" d="M34 159Q34 268 120 355T306 442Q362 442 394 418T427 355Q427 326 408 306T360 285Q341 285 330 295T319 325T330 359T352 380T366 386H367Q367 388 361 392T340 400T306 404Q276 404 249 390Q228 381 206 359Q162 315 142 235T121 119Q121 73 147 50Q169 26 205 26H209Q321 26 394 111Q403 121 406 121Q410 121 419 112T429 98T420 83T391 55T346 25T282 0T202 -11Q127 -11 81 37T34 159Z"></path></g><g data-mml-node="TeXAtom" transform="translate(466,-150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mn"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g></g></g><g data-mml-node="msub" transform="translate(869.6,0)"><g data-mml-node="mi"><path data-c="1D709" d="M268 632Q268 704 296 704Q314 704 314 687Q314 682 311 664T308 635T309 620V616H315Q342 619 360 619Q443 619 443 586Q439 548 358 546H344Q326 546 317 549T290 566Q257 550 226 505T195 405Q195 381 201 364T211 342T218 337Q266 347 298 347Q375 347 375 314Q374 297 359 288T327 277T280 275Q234 275 208 283L195 286Q149 260 119 214T88 130Q88 116 90 108Q101 79 129 63T229 20Q238 17 243 15Q337 -21 354 -33Q383 -53 383 -94Q383 -137 351 -171T273 -205Q240 -205 202 -190T158 -167Q156 -163 156 -159Q156 -151 161 -146T176 -140Q182 -140 189 -143Q232 -168 274 -168Q286 -168 292 -165Q313 -151 313 -129Q313 -112 301 -104T232 -75Q214 -68 204 -64Q198 -62 171 -52T136 -38T107 -24T78 -8T56 12T36 37T26 66T21 103Q21 149 55 206T145 301L154 307L148 313Q141 319 136 323T124 338T111 358T103 382T99 413Q99 471 143 524T259 602L271 607Q268 618 268 632Z"></path></g><g data-mml-node="TeXAtom" transform="translate(471,-150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mn"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g></g></g><g data-mml-node="mo" transform="translate(1966.3,0)"><path data-c="2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path></g><g data-mml-node="msub" transform="translate(2966.6,0)"><g data-mml-node="mi"><path data-c="1D450" d="M34 159Q34 268 120 355T306 442Q362 442 394 418T427 355Q427 326 408 306T360 285Q341 285 330 295T319 325T330 359T352 380T366 386H367Q367 388 361 392T340 400T306 404Q276 404 249 390Q228 381 206 359Q162 315 142 235T121 119Q121 73 147 50Q169 26 205 26H209Q321 26 394 111Q403 121 406 121Q410 121 419 112T429 98T420 83T391 55T346 25T282 0T202 -11Q127 -11 81 37T34 159Z"></path></g><g data-mml-node="TeXAtom" transform="translate(466,-150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g></g></g><g data-mml-node="msub" transform="translate(3836.1,0)"><g data-mml-node="mi"><path data-c="1D709" d="M268 632Q268 704 296 704Q314 704 314 687Q314 682 311 664T308 635T309 620V616H315Q342 619 360 619Q443 619 443 586Q439 548 358 546H344Q326 546 317 549T290 566Q257 550 226 505T195 405Q195 381 201 364T211 342T218 337Q266 347 298 347Q375 347 375 314Q374 297 359 288T327 277T280 275Q234 275 208 283L195 286Q149 260 119 214T88 130Q88 116 90 108Q101 79 129 63T229 20Q238 17 243 15Q337 -21 354 -33Q383 -53 383 -94Q383 -137 351 -171T273 -205Q240 -205 202 -190T158 -167Q156 -163 156 -159Q156 -151 161 -146T176 -140Q182 -140 189 -143Q232 -168 274 -168Q286 -168 292 -165Q313 -151 313 -129Q313 -112 301 -104T232 -75Q214 -68 204 -64Q198 -62 171 -52T136 -38T107 -24T78 -8T56 12T36 37T26 66T21 103Q21 149 55 206T145 301L154 307L148 313Q141 319 136 323T124 338T111 358T103 382T99 413Q99 471 143 524T259 602L271 607Q268 618 268 632Z"></path></g><g data-mml-node="TeXAtom" transform="translate(471,-150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g></g></g><g data-mml-node="mo" transform="translate(4710.7,0)"><path data-c="2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path></g><g data-mml-node="mo" transform="translate(5488.7,0)"><path data-c="2E" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60Z"></path></g><g data-mml-node="mo" transform="translate(5933.3,0)"><path data-c="2E" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60Z"></path></g><g data-mml-node="mo" transform="translate(6378,0)"><path data-c="2E" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60Z"></path></g><g data-mml-node="msub" transform="translate(6822.7,0)"><g data-mml-node="mi"><path data-c="1D450" d="M34 159Q34 268 120 355T306 442Q362 442 394 418T427 355Q427 326 408 306T360 285Q341 285 330 295T319 325T330 359T352 380T366 386H367Q367 388 361 392T340 400T306 404Q276 404 249 390Q228 381 206 359Q162 315 142 235T121 119Q121 73 147 50Q169 26 205 26H209Q321 26 394 111Q403 121 406 121Q410 121 419 112T429 98T420 83T391 55T346 25T282 0T202 -11Q127 -11 81 37T34 159Z"></path></g><g data-mml-node="TeXAtom" transform="translate(466,-150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g></g></g><g data-mml-node="msub" transform="translate(7762.9,0)"><g data-mml-node="mi"><path data-c="1D709" d="M268 632Q268 704 296 704Q314 704 314 687Q314 682 311 664T308 635T309 620V616H315Q342 619 360 619Q443 619 443 586Q439 548 358 546H344Q326 546 317 549T290 566Q257 550 226 505T195 405Q195 381 201 364T211 342T218 337Q266 347 298 347Q375 347 375 314Q374 297 359 288T327 277T280 275Q234 275 208 283L195 286Q149 260 119 214T88 130Q88 116 90 108Q101 79 129 63T229 20Q238 17 243 15Q337 -21 354 -33Q383 -53 383 -94Q383 -137 351 -171T273 -205Q240 -205 202 -190T158 -167Q156 -163 156 -159Q156 -151 161 -146T176 -140Q182 -140 189 -143Q232 -168 274 -168Q286 -168 292 -165Q313 -151 313 -129Q313 -112 301 -104T232 -75Q214 -68 204 -64Q198 -62 171 -52T136 -38T107 -24T78 -8T56 12T36 37T26 66T21 103Q21 149 55 206T145 301L154 307L148 313Q141 319 136 323T124 338T111 358T103 382T99 413Q99 471 143 524T259 602L271 607Q268 618 268 632Z"></path></g><g data-mml-node="TeXAtom" transform="translate(471,-150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g></g></g></g></g></svg></mjx-container></span></p>
+<p>注意：基础解系不唯一，但是数量一定相同</p>
+<p><strong>定理4.4.2</strong>
+基础解系可以由任意n-r个线性无关的解向量构成（联系解向量的线性组合仍然是解，故只要新的解向量组线性无关，怎么变都还是呢能做基础解系，见例4.4.3）</p>
+<p><strong>定义：非齐次巴拉巴拉</strong> Ax = b.
+解集三种情况：无解/唯一/无穷多. 性质1：两个特解的差为对应齐次的解 性质2
+对应齐次的解+特解=特解</p>
+<p><strong>定理4.4.3</strong>
+在Ax=b有解的前提下，任意一个解可表示为一个特解+对应齐次的一个解。Ax=0的解的数量决定了Ax=b.</p>
 <h3 id="题型库-1">题型库</h3>
-<p>送分：求基础解系（化成阶梯性即可）/</p>
+<p>送分：求基础解系（化成阶梯性即可）</p>
+<p>困难的证明：例4.4.4（思路可能是遇到相乘先把B分块，观察n-r(A)可凑）</p>
 
         </div>
 
@@ -522,27 +533,27 @@ n未知数的个数,则Ax=0肯定有非零解（也有基础解系）并且成�
             <div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
                 <div class="article-copyright-info-container">
     <ul>
-        <li><strong>Title:</strong> LinearAlgebra</li>
-        <li><strong>Author:</strong> xxt</li>
-        <li><strong>Created at
+        <li><strong>タイトル:</strong> LinearAlgebra</li>
+        <li><strong>作者:</strong> xxt</li>
+        <li><strong>で作成されました
                 :</strong> 2024-11-12 01:10:28</li>
         
             <li>
-                <strong>Updated at
-                    :</strong> 2024-11-12 10:50:07
+                <strong>で更新されました
+                    :</strong> 2024-11-12 11:24:53
             </li>
         
         <li>
-            <strong>Link:</strong> https://theohno325.github.io/2024/11/11/LinearAlgebra/
+            <strong>リンク:</strong> https://theohno325.github.io/2024/11/11/LinearAlgebra/
         </li>
         <li>
             <strong>
-                License:
+                著作権宣言:
             </strong>
             
 
             
-                This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a>.
+                この文章は <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a> を使用して許可します。
             
         </li>
     </ul>
@@ -574,7 +585,7 @@ n未知数的个数,则Ax=0肯定有非零解（也有基础解系）并且成�
                         >
                             <span class="title flex justify-center items-center">
                                 <span class="post-nav-title-item">精神状态</span>
-                                <span class="post-nav-item">Next posts</span>
+                                <span class="post-nav-item">次一篇</span>
                             </span>
                             <span class="right arrow-icon flex justify-center items-center">
                                 <i class="fa-solid fa-chevron-right"></i>
@@ -591,7 +602,7 @@ n未知数的个数,则Ax=0肯定有非零解（也有基础解系）并且成�
                 <div class="comments-container mt-10 w-full ">
     <div id="comment-anchor" class="w-full h-2.5"></div>
     <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
-        Comments
+        コメント
     </div>
     
 
@@ -636,7 +647,7 @@ n未知数的个数,则Ax=0肯定有非零解（也有基础解系）并且成�
         <div class="toc-content-container">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <div class="toc-title">On this page</div>
+        <div class="toc-title">目次</div>
         <div class="page-title">LinearAlgebra</div>
         <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8A%82"><span class="nav-text">4.3节</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9"><span class="nav-text">知识点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%99%BD%E7%84%B6%E4%B8%8D%E6%98%AF%E5%AE%9A%E7%90%86%E4%BD%86%E6%98%AF%E7%9C%8B%E8%B5%B7%E6%9D%A5%E4%B9%9F%E5%BE%88%E9%87%8D%E8%A6%81-%E7%9F%A9%E9%98%B5%E5%88%9D%E7%AD%89%E8%A1%8C%E5%8F%98%E6%8D%A2%E4%B9%8B%E5%90%8E%E8%99%BD%E7%84%B6%E5%89%8D%E5%90%8E%E5%88%97%E5%90%91%E9%87%8F%E4%B8%8D%E7%AD%89%E4%BB%B7%E7%9B%B8%E5%BD%93%E4%BA%8E%E5%B7%A6%E4%B9%98p%E4%BD%86%E6%98%AF%E5%88%97%E5%90%91%E9%87%8F%E4%B9%8B%E9%97%B4%E7%9A%84%E7%BA%BF%E6%80%A7%E5%85%B3%E7%B3%BB%E4%B8%8D%E6%94%B9%E5%8F%98ax0%E7%9A%84%E8%A7%A3%E4%B8%8D%E6%94%B9%E5%8F%98"><span class="nav-text">虽然不是定理但是看起来也很重要
 矩阵初等行变换之后，虽然前后列向量不等价（相当于左乘P），但是列向量之间的线性关系不改变（Ax&#x3D;0的解不改变）。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E7%90%864.3.4-%E7%9F%A9%E9%98%B5%E7%9A%84%E7%A7%A9%E7%9A%84%E5%8F%98%E5%8C%96%E7%9B%B4%E6%8E%A5%E8%A7%81%E4%B9%A6"><span class="nav-text">定理4.3.4
@@ -673,7 +684,7 @@ n未知数的个数,则Ax=0肯定有非零解（也有基础解系）并且成�
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        6 posts in total
+                        共 6 記事
                     </span>
                     
                 </p>
@@ -684,26 +695,26 @@ n未知数的个数,则Ax=0肯定有非零解（也有基础解系）并且成�
             <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
                 
                     <span id="busuanzi_container_site_uv" class="lg:!block">
-                        <span class="text-sm">VISITOR COUNT</span>
+                        <span class="text-sm">訪問者数</span>
                         <span id="busuanzi_value_site_uv"></span>
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv" class="lg:!block">
-                        <span class="text-sm">TOTAL PAGE VIEWS</span>
+                        <span class="text-sm">総アクセス数</span>
                         <span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
-            <span class="lg:block text-sm">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a></span>
-            <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.7.3</a></span>
+            <span class="lg:block text-sm"><?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a> で駆動する</span>
+            <span class="text-sm lg:block">テーマ&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.7.3</a></span>
         </div>
         
         
             <div>
-                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+                ブログが稼働する <span class="odometer" id="runtime_days" ></span> 日 <span class="odometer" id="runtime_hours"></span> 時間 <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> 秒
             </div>
         
         

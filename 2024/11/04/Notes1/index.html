@@ -18,22 +18,25 @@
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="Attention is all you need 点乘Attention Q(dk),K(dk),V(dv)均为向量.Q与K点乘(matmul),除以维数的平方(scale)(防止dk过大时softmax爆炸),(mask),再经过softmax得到V的权重 应用中一系列Q(dxl),K(dxk),QK^T得到lxk的矩阵,每一行为一个query的结果,对行进行softmax.V(kxv)">
+        <meta name="description" content="Attention is all you need 点乘Attention Q(dk),K(dk),V(dv)均为向量.Q与K点乘(matmul),除以维数的平方(scale)(防止dk过大时softmax爆炸),(mask),再经过softmax得到V的权重 应用中一系列得到lxk的矩阵,每一行为一个query的结果,对行进行softmax.V(kxv)有k个V,每个V在结果中的占比.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="来自钱神">
+<meta property="og:title" content="Transformer系列">
 <meta property="og:url" content="http://theohno325.github.io/2024/11/04/Notes1/index.html">
 <meta property="og:site_name" content="Cu(NO3)2">
-<meta property="og:description" content="Attention is all you need 点乘Attention Q(dk),K(dk),V(dv)均为向量.Q与K点乘(matmul),除以维数的平方(scale)(防止dk过大时softmax爆炸),(mask),再经过softmax得到V的权重 应用中一系列Q(dxl),K(dxk),QK^T得到lxk的矩阵,每一行为一个query的结果,对行进行softmax.V(kxv)">
+<meta property="og:description" content="Attention is all you need 点乘Attention Q(dk),K(dk),V(dv)均为向量.Q与K点乘(matmul),除以维数的平方(scale)(防止dk过大时softmax爆炸),(mask),再经过softmax得到V的权重 应用中一系列得到lxk的矩阵,每一行为一个query的结果,对行进行softmax.V(kxv)有k个V,每个V在结果中的占比.">
 <meta property="og:locale">
 <meta property="og:image" content="http://theohno325.github.io/2024/11/04/Notes1/attention.jpg">
 <meta property="og:image" content="http://theohno325.github.io/2024/11/04/Notes1/O1.jpg">
 <meta property="og:image" content="http://theohno325.github.io/2024/11/04/Notes1/PE.jpg">
 <meta property="og:image" content="http://theohno325.github.io/2024/11/04/Notes1/ViT.jpg">
 <meta property="og:image" content="http://theohno325.github.io/2024/11/04/Notes1/ViT2.jpg">
+<meta property="og:image" content="http://theohno325.github.io/2024/11/04/Notes1/magic.jpg">
+<meta property="og:image" content="http://theohno325.github.io/2024/11/04/Notes1/UNETR.jpg">
 <meta property="article:published_time" content="2024-11-05T03:22:32.000Z">
-<meta property="article:modified_time" content="2024-11-15T08:59:47.905Z">
+<meta property="article:modified_time" content="2024-11-15T11:52:18.685Z">
 <meta property="article:author" content="xxt">
-<meta property="article:tag" content="all">
+<meta property="article:tag" content="paper">
+<meta property="article:tag" content="CV">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://theohno325.github.io/2024/11/04/Notes1/attention.jpg">
     
@@ -47,7 +50,7 @@
     
     <title>
         
-            来自钱神 | Cu(NO3)2&#39;s home
+            Transformer系列 | Cu(NO3)2&#39;s home
         
     </title>
 
@@ -273,7 +276,7 @@ mjx-container[display="true"] + br {
                                    href="/"
                                         >
                                     <i class="fa-regular fa-house fa-fw"></i>
-                                    首页
+                                    HOME
                                     
                                 </a>
 
@@ -307,7 +310,7 @@ mjx-container[display="true"] + br {
                            href="/"
                         >
                             <span>
-                                首页
+                                HOME
                             </span>
                             
                                 <i class="fa-regular fa-house fa-sm fa-fw"></i>
@@ -325,16 +328,16 @@ mjx-container[display="true"] + br {
 
         <div class="statistics flex justify-around my-2.5">
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">7</div>
-        <div class="label text-third-text-color text-sm">标签</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">8</div>
+        <div class="label text-third-text-color text-sm">Tags</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
         <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">0</div>
-        <div class="label text-third-text-color text-sm">分类</div>
+        <div class="label text-third-text-color text-sm">Categories</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
         <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">6</div>
-        <div class="label text-third-text-color text-sm">文章</div>
+        <div class="label text-third-text-color text-sm">Posts</div>
     </a>
 </div>
     </div>
@@ -359,7 +362,7 @@ mjx-container[display="true"] + br {
         <div class="article-title relative w-full">
             
                 <div class="w-full flex items-center pt-6 justify-start">
-                    <h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">来自钱神</h1>
+                    <h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">Transformer系列</h1>
                 </div>
             
             </div>
@@ -382,14 +385,14 @@ mjx-container[display="true"] + br {
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
         <span class="desktop">2024-11-05 03:22:32</span>
         <span class="mobile">2024-11-05 03:22:32</span>
-        <span class="hover-info">创建</span>
+        <span class="hover-info">Created</span>
     </span>
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-11-15 08:59:47</span>
-            <span class="mobile">2024-11-15 08:59:47</span>
-            <span class="hover-info">更新</span>
+            <span class="desktop">2024-11-15 11:52:18</span>
+            <span class="mobile">2024-11-15 11:52:18</span>
+            <span class="hover-info">Updated</span>
         </span>
     
 
@@ -400,7 +403,11 @@ mjx-container[display="true"] + br {
             <ul>
                 
                     <li>
-                        <a href="/tags/all/">all</a>&nbsp;
+                        <a href="/tags/paper/">paper</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/CV/">CV</a>&nbsp;
                     </li>
                 
             </ul>
@@ -429,10 +436,10 @@ mjx-container[display="true"] + br {
             <h3 id="attention-is-all-you-need">Attention is all you need</h3>
 <p><strong>点乘Attention</strong>
 Q(dk),K(dk),V(dv)均为向量.Q与K点乘(matmul),除以维数的平方(scale)(防止dk过大时softmax爆炸),(mask),再经过softmax得到V的权重
-应用中一系列Q(dxl),K(dxk),QK^T得到lxk的矩阵,每一行为一个query的结果,对行进行softmax.V(kxv)有k个V,每个V在结果中的占比.</p>
+应用中一系列<span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="21.36ex" height="2.47ex" role="img" focusable="false" viewBox="0 -841.7 9441.1 1091.7"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D444" d="M399 -80Q399 -47 400 -30T402 -11V-7L387 -11Q341 -22 303 -22Q208 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435Q740 255 592 107Q529 47 461 16L444 8V3Q444 2 449 -24T470 -66T516 -82Q551 -82 583 -60T625 -3Q631 11 638 11Q647 11 649 2Q649 -6 639 -34T611 -100T557 -165T481 -194Q399 -194 399 -87V-80ZM636 468Q636 523 621 564T580 625T530 655T477 665Q429 665 379 640Q277 591 215 464T153 216Q153 110 207 59Q231 38 236 38V46Q236 86 269 120T347 155Q372 155 390 144T417 114T429 82T435 55L448 64Q512 108 557 185T619 334T636 468ZM314 18Q362 18 404 39L403 49Q399 104 366 115Q354 117 347 117Q344 117 341 117T337 118Q317 118 296 98T274 52Q274 18 314 18Z"></path></g><g data-mml-node="mo" transform="translate(791,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(1180,0)"><path data-c="1D451" d="M366 683Q367 683 438 688T511 694Q523 694 523 686Q523 679 450 384T375 83T374 68Q374 26 402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487H491Q506 153 506 145Q506 140 503 129Q490 79 473 48T445 8T417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157Q33 205 53 255T101 341Q148 398 195 420T280 442Q336 442 364 400Q369 394 369 396Q370 400 396 505T424 616Q424 629 417 632T378 637H357Q351 643 351 645T353 664Q358 683 366 683ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"></path></g><g data-mml-node="mi" transform="translate(1700,0)"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g><g data-mml-node="mi" transform="translate(2272,0)"><path data-c="1D459" d="M117 59Q117 26 142 26Q179 26 205 131Q211 151 215 152Q217 153 225 153H229Q238 153 241 153T246 151T248 144Q247 138 245 128T234 90T214 43T183 6T137 -11Q101 -11 70 11T38 85Q38 97 39 102L104 360Q167 615 167 623Q167 626 166 628T162 632T157 634T149 635T141 636T132 637T122 637Q112 637 109 637T101 638T95 641T94 647Q94 649 96 661Q101 680 107 682T179 688Q194 689 213 690T243 693T254 694Q266 694 266 686Q266 675 193 386T118 83Q118 81 118 75T117 65V59Z"></path></g><g data-mml-node="mo" transform="translate(2570,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g><g data-mml-node="mo" transform="translate(2959,0)"><path data-c="2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path></g><g data-mml-node="mi" transform="translate(3403.7,0)"><path data-c="1D43E" d="M285 628Q285 635 228 637Q205 637 198 638T191 647Q191 649 193 661Q199 681 203 682Q205 683 214 683H219Q260 681 355 681Q389 681 418 681T463 682T483 682Q500 682 500 674Q500 669 497 660Q496 658 496 654T495 648T493 644T490 641T486 639T479 638T470 637T456 637Q416 636 405 634T387 623L306 305Q307 305 490 449T678 597Q692 611 692 620Q692 635 667 637Q651 637 651 648Q651 650 654 662T659 677Q662 682 676 682Q680 682 711 681T791 680Q814 680 839 681T869 682Q889 682 889 672Q889 650 881 642Q878 637 862 637Q787 632 726 586Q710 576 656 534T556 455L509 418L518 396Q527 374 546 329T581 244Q656 67 661 61Q663 59 666 57Q680 47 717 46H738Q744 38 744 37T741 19Q737 6 731 0H720Q680 3 625 3Q503 3 488 0H478Q472 6 472 9T474 27Q478 40 480 43T491 46H494Q544 46 544 71Q544 75 517 141T485 216L427 354L359 301L291 248L268 155Q245 63 245 58Q245 51 253 49T303 46H334Q340 37 340 35Q340 19 333 5Q328 0 317 0Q314 0 280 1T180 2Q118 2 85 2T49 1Q31 1 31 11Q31 13 34 25Q38 41 42 43T65 46Q92 46 125 49Q139 52 144 61Q147 65 216 339T285 628Z"></path></g><g data-mml-node="mo" transform="translate(4292.7,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(4681.7,0)"><path data-c="1D451" d="M366 683Q367 683 438 688T511 694Q523 694 523 686Q523 679 450 384T375 83T374 68Q374 26 402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487H491Q506 153 506 145Q506 140 503 129Q490 79 473 48T445 8T417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157Q33 205 53 255T101 341Q148 398 195 420T280 442Q336 442 364 400Q369 394 369 396Q370 400 396 505T424 616Q424 629 417 632T378 637H357Q351 643 351 645T353 664Q358 683 366 683ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"></path></g><g data-mml-node="mi" transform="translate(5201.7,0)"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g><g data-mml-node="mi" transform="translate(5773.7,0)"><path data-c="1D458" d="M121 647Q121 657 125 670T137 683Q138 683 209 688T282 694Q294 694 294 686Q294 679 244 477Q194 279 194 272Q213 282 223 291Q247 309 292 354T362 415Q402 442 438 442Q468 442 485 423T503 369Q503 344 496 327T477 302T456 291T438 288Q418 288 406 299T394 328Q394 353 410 369T442 390L458 393Q446 405 434 405H430Q398 402 367 380T294 316T228 255Q230 254 243 252T267 246T293 238T320 224T342 206T359 180T365 147Q365 130 360 106T354 66Q354 26 381 26Q429 26 459 145Q461 153 479 153H483Q499 153 499 144Q499 139 496 130Q455 -11 378 -11Q333 -11 305 15T277 90Q277 108 280 121T283 145Q283 167 269 183T234 206T200 217T182 220H180Q168 178 159 139T145 81T136 44T129 20T122 7T111 -2Q98 -11 83 -11Q66 -11 57 -1T48 16Q48 26 85 176T158 471L195 616Q196 629 188 632T149 637H144Q134 637 131 637T124 640T121 647Z"></path></g><g data-mml-node="mo" transform="translate(6294.7,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g><g data-mml-node="mo" transform="translate(6683.7,0)"><path data-c="2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path></g><g data-mml-node="mi" transform="translate(7128.3,0)"><path data-c="1D444" d="M399 -80Q399 -47 400 -30T402 -11V-7L387 -11Q341 -22 303 -22Q208 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435Q740 255 592 107Q529 47 461 16L444 8V3Q444 2 449 -24T470 -66T516 -82Q551 -82 583 -60T625 -3Q631 11 638 11Q647 11 649 2Q649 -6 639 -34T611 -100T557 -165T481 -194Q399 -194 399 -87V-80ZM636 468Q636 523 621 564T580 625T530 655T477 665Q429 665 379 640Q277 591 215 464T153 216Q153 110 207 59Q231 38 236 38V46Q236 86 269 120T347 155Q372 155 390 144T417 114T429 82T435 55L448 64Q512 108 557 185T619 334T636 468ZM314 18Q362 18 404 39L403 49Q399 104 366 115Q354 117 347 117Q344 117 341 117T337 118Q317 118 296 98T274 52Q274 18 314 18Z"></path></g><g data-mml-node="msup" transform="translate(7919.3,0)"><g data-mml-node="mi"><path data-c="1D43E" d="M285 628Q285 635 228 637Q205 637 198 638T191 647Q191 649 193 661Q199 681 203 682Q205 683 214 683H219Q260 681 355 681Q389 681 418 681T463 682T483 682Q500 682 500 674Q500 669 497 660Q496 658 496 654T495 648T493 644T490 641T486 639T479 638T470 637T456 637Q416 636 405 634T387 623L306 305Q307 305 490 449T678 597Q692 611 692 620Q692 635 667 637Q651 637 651 648Q651 650 654 662T659 677Q662 682 676 682Q680 682 711 681T791 680Q814 680 839 681T869 682Q889 682 889 672Q889 650 881 642Q878 637 862 637Q787 632 726 586Q710 576 656 534T556 455L509 418L518 396Q527 374 546 329T581 244Q656 67 661 61Q663 59 666 57Q680 47 717 46H738Q744 38 744 37T741 19Q737 6 731 0H720Q680 3 625 3Q503 3 488 0H478Q472 6 472 9T474 27Q478 40 480 43T491 46H494Q544 46 544 71Q544 75 517 141T485 216L427 354L359 301L291 248L268 155Q245 63 245 58Q245 51 253 49T303 46H334Q340 37 340 35Q340 19 333 5Q328 0 317 0Q314 0 280 1T180 2Q118 2 85 2T49 1Q31 1 31 11Q31 13 34 25Q38 41 42 43T65 46Q92 46 125 49Q139 52 144 61Q147 65 216 339T285 628Z"></path></g><g data-mml-node="TeXAtom" transform="translate(974,363) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D447" d="M40 437Q21 437 21 445Q21 450 37 501T71 602L88 651Q93 669 101 677H569H659Q691 677 697 676T704 667Q704 661 687 553T668 444Q668 437 649 437Q640 437 637 437T631 442L629 445Q629 451 635 490T641 551Q641 586 628 604T573 629Q568 630 515 631Q469 631 457 630T439 622Q438 621 368 343T298 60Q298 48 386 46Q418 46 427 45T436 36Q436 31 433 22Q429 4 424 1L422 0Q419 0 415 0Q410 0 363 1T228 2Q99 2 64 0H49Q43 6 43 9T45 27Q49 40 55 46H83H94Q174 46 189 55Q190 56 191 56Q196 59 201 76T241 233Q258 301 269 344Q339 619 339 625Q339 630 310 630H279Q212 630 191 624Q146 614 121 583T67 467Q60 445 57 441T43 437H40Z"></path></g></g></g></g></g></svg></mjx-container></span>得到lxk的矩阵,每一行为一个query的结果,对行进行softmax.V(kxv)有k个V,每个V在结果中的占比.</p>
 <p><strong>Multi-head Attention</strong>
 将原始的QKV线性变换(project)到指定的维数上,参数可学习.将所有head的结果concat再线性变换Wo(shared)到指定空间
-.head_{i}需要WiQ,WiK,WiV,将dmodel-&gt;dk/dv.</p>
+.<span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.357ex;" xmlns="http://www.w3.org/2000/svg" width="5.47ex" height="1.927ex" role="img" focusable="false" viewBox="0 -694 2418 851.8"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="210E" d="M137 683Q138 683 209 688T282 694Q294 694 294 685Q294 674 258 534Q220 386 220 383Q220 381 227 388Q288 442 357 442Q411 442 444 415T478 336Q478 285 440 178T402 50Q403 36 407 31T422 26Q450 26 474 56T513 138Q516 149 519 151T535 153Q555 153 555 145Q555 144 551 130Q535 71 500 33Q466 -10 419 -10H414Q367 -10 346 17T325 74Q325 90 361 192T398 345Q398 404 354 404H349Q266 404 205 306L198 293L164 158Q132 28 127 16Q114 -11 83 -11Q69 -11 59 -2T48 16Q48 30 121 320L195 616Q195 629 188 632T149 637H128Q122 643 122 645T124 664Q129 683 137 683Z"></path></g><g data-mml-node="mi" transform="translate(576,0)"><path data-c="1D452" d="M39 168Q39 225 58 272T107 350T174 402T244 433T307 442H310Q355 442 388 420T421 355Q421 265 310 237Q261 224 176 223Q139 223 138 221Q138 219 132 186T125 128Q125 81 146 54T209 26T302 45T394 111Q403 121 406 121Q410 121 419 112T429 98T420 82T390 55T344 24T281 -1T205 -11Q126 -11 83 42T39 168ZM373 353Q367 405 305 405Q272 405 244 391T199 357T170 316T154 280T149 261Q149 260 169 260Q282 260 327 284T373 353Z"></path></g><g data-mml-node="mi" transform="translate(1042,0)"><path data-c="1D44E" d="M33 157Q33 258 109 349T280 441Q331 441 370 392Q386 422 416 422Q429 422 439 414T449 394Q449 381 412 234T374 68Q374 43 381 35T402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487Q506 153 506 144Q506 138 501 117T481 63T449 13Q436 0 417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157ZM351 328Q351 334 346 350T323 385T277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q217 26 254 59T298 110Q300 114 325 217T351 328Z"></path></g><g data-mml-node="msub" transform="translate(1571,0)"><g data-mml-node="mi"><path data-c="1D451" d="M366 683Q367 683 438 688T511 694Q523 694 523 686Q523 679 450 384T375 83T374 68Q374 26 402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487H491Q506 153 506 145Q506 140 503 129Q490 79 473 48T445 8T417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157Q33 205 53 255T101 341Q148 398 195 420T280 442Q336 442 364 400Q369 394 369 396Q370 400 396 505T424 616Q424 629 417 632T378 637H357Q351 643 351 645T353 664Q358 683 366 683ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"></path></g><g data-mml-node="TeXAtom" transform="translate(553,-150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D456" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"></path></g></g></g></g></g></svg></mjx-container></span>需要WiQ,WiK,WiV,将dmodel-&gt;dk/dv.</p>
 <figure>
 <img lazyload="" src="/images/loading.svg" data-src="attention.jpg" alt="attention">
 <figcaption aria-hidden="true">attention</figcaption>
@@ -486,8 +493,11 @@ images, with the fewest possible modifications. " ---
 <img lazyload="" src="/images/loading.svg" data-src="ViT.jpg" alt="ViT">
 <figcaption aria-hidden="true">ViT</figcaption>
 </figure>
+<p>线性映射代码实现:直接使用一个卷积层.例:原图片224x224x3,按照16x16大小划分可得到196个patches,每个patches应该被映射到一个长度768的向量.使用16x16,步长为16,核数量为768的卷积(对每个patch用相同的映射,这点和transformer里的multi-head不同,但目标都是得到不同空间上的特征),最后得到196x768的输入.</p>
 <p>注意:extra learnable “classification token”(Similar to BERT’s [class]
 token,待补充).(来自gpt的回答)这个token是在模型训练时随机初始化的，并随着训练过程不断更新,由自注意力机制可以与其他patch交换信息,作为图像的全局表示(有点玄学).最终的分类结果y由该z0在最后一层的表示LayerNorm得到(所以z0其实是代表了所有class的向量)</p>
+<p>加上classfication token之后变成197x768的输入</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">PatchEmbed</span>(nn.Module):</span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    2D Image to Patch Embedding</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, img_size=<span class="number">224</span>, patch_size=<span class="number">16</span>, in_c=<span class="number">3</span>, embed_dim=<span class="number">768</span>, norm_layer=<span class="literal">None</span></span>):</span><br><span class="line">        <span class="built_in">super</span>().__init__()</span><br><span class="line">        img_size = (img_size, img_size)</span><br><span class="line">        patch_size = (patch_size, patch_size)</span><br><span class="line">        <span class="variable language_">self</span>.img_size = img_size</span><br><span class="line">        <span class="variable language_">self</span>.patch_size = patch_size</span><br><span class="line">        <span class="variable language_">self</span>.grid_size = (img_size[<span class="number">0</span>] // patch_size[<span class="number">0</span>], img_size[<span class="number">1</span>] // patch_size[<span class="number">1</span>])</span><br><span class="line">        <span class="variable language_">self</span>.num_patches = <span class="variable language_">self</span>.grid_size[<span class="number">0</span>] * <span class="variable language_">self</span>.grid_size[<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line">        <span class="variable language_">self</span>.proj = nn.Conv2d(in_c, embed_dim, kernel_size=patch_size, stride=patch_size)</span><br><span class="line">        <span class="variable language_">self</span>.norm = norm_layer(embed_dim) <span class="keyword">if</span> norm_layer <span class="keyword">else</span> nn.Identity()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">forward</span>(<span class="params">self, x</span>):</span><br><span class="line">        B, C, H, W = x.shape</span><br><span class="line">        <span class="keyword">assert</span> H == <span class="variable language_">self</span>.img_size[<span class="number">0</span>] <span class="keyword">and</span> W == <span class="variable language_">self</span>.img_size[<span class="number">1</span>], \</span><br><span class="line">            <span class="string">f"Input image size (<span class="subst">{H}</span>*<span class="subst">{W}</span>) doesn't match model (<span class="subst">{self.img_size[<span class="number">0</span>]}</span>*<span class="subst">{self.img_size[<span class="number">1</span>]}</span>)."</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># flatten: [B, C, H, W] -&gt; [B, C, HW]</span></span><br><span class="line">        <span class="comment"># transpose: [B, C, HW] -&gt; [B, HW, C]</span></span><br><span class="line">        x = <span class="variable language_">self</span>.proj(x).flatten(<span class="number">2</span>).transpose(<span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line">        x = <span class="variable language_">self</span>.norm(x)</span><br><span class="line">        <span class="keyword">return</span> x</span><br></pre></td></tr></table></figure></div>
 <figure>
 <img lazyload="" src="/images/loading.svg" data-src="ViT2.jpg" alt="ViT2">
 <figcaption aria-hidden="true">ViT2</figcaption>
@@ -503,8 +513,20 @@ embedding projection <strong>E</strong>
 map展平</p>
 <p><strong>fine-tunning</strong>
 1.分类个数K.把预训练中的预测层换成初始化为0的DxK的线性层.2.分辨率.
-把预训练的位置编码线性插值(may not be
-meaningful,但是位置编码是固定的?想看看细节)</p>
+把预训练的位置编码线性插值(好奇怪)(思考了一下,也不是很奇怪)</p>
+<p><strong>magic time</strong></p>
+<figure>
+<img lazyload="" src="/images/loading.svg" data-src="magic.jpg" alt="magic">
+<figcaption aria-hidden="true">magic</figcaption>
+</figure>
+<h3 id="unetrtransformers-for-3d-medical-image-segmentation">UNETR:Transformers
+for 3D Medical Image Segmentation</h3>
+<figure>
+<img lazyload="" src="/images/loading.svg" data-src="UNETR.jpg" alt="UNETR">
+<figcaption aria-hidden="true">UNETR</figcaption>
+</figure>
+<p>(虽然output与input有点不太对头,但是和ViT还是蛮像的,除了要加一个CNN
+decoder.)(encoder输出什么?原始imgsize?QKV=img,label=label)</p>
 <h3 id="swin-unetr-swin-transformers-for-semantic-segmentation-of-brain-tumors-in-mri-images">Swin
 UNETR: Swin Transformers for Semantic Segmentation of Brain Tumors in
 MRI Images</h3>
@@ -522,27 +544,27 @@ tumor与MRI的简介，ViT：用于图像的transformer；UNETR首个将ViT应�
             <div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
                 <div class="article-copyright-info-container">
     <ul>
-        <li><strong>标题:</strong> 来自钱神</li>
-        <li><strong>作者:</strong> xxt</li>
-        <li><strong>创建于
+        <li><strong>Title:</strong> Transformer系列</li>
+        <li><strong>Author:</strong> xxt</li>
+        <li><strong>Created at
                 :</strong> 2024-11-05 03:22:32</li>
         
             <li>
-                <strong>更新于
-                    :</strong> 2024-11-15 08:59:47
+                <strong>Updated at
+                    :</strong> 2024-11-15 11:52:18
             </li>
         
         <li>
-            <strong>链接:</strong> https://theohno325.github.io/2024/11/04/Notes1/
+            <strong>Link:</strong> https://theohno325.github.io/2024/11/04/Notes1/
         </li>
         <li>
             <strong>
-                版权声明:
+                License:
             </strong>
             
 
             
-                本文章采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a> 进行许可。
+                This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a>.
             
         </li>
     </ul>
@@ -555,7 +577,11 @@ tumor与MRI的简介，ViT：用于图像的transformer；UNETR首个将ViT应�
             <ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
                 
                     <li class="tag-item mx-0.5">
-                        <a href="/tags/all/">#all</a>&nbsp;
+                        <a href="/tags/paper/">#paper</a>&nbsp;
+                    </li>
+                
+                    <li class="tag-item mx-0.5">
+                        <a href="/tags/CV/">#CV</a>&nbsp;
                     </li>
                 
             </ul>
@@ -576,7 +602,7 @@ tumor与MRI的简介，ViT：用于图像的transformer；UNETR首个将ViT应�
                             </span>
                             <span class="title flex justify-center items-center">
                                 <span class="post-nav-title-item">Mathnotes</span>
-                                <span class="post-nav-item">上一篇</span>
+                                <span class="post-nav-item">Prev posts</span>
                             </span>
                         </a>
                     </div>
@@ -589,7 +615,7 @@ tumor与MRI的简介，ViT：用于图像的transformer；UNETR首个将ViT应�
                         >
                             <span class="title flex justify-center items-center">
                                 <span class="post-nav-title-item">Cu(NO3)2&#39;s home</span>
-                                <span class="post-nav-item">下一篇</span>
+                                <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex justify-center items-center">
                                 <i class="fa-solid fa-chevron-right"></i>
@@ -606,7 +632,7 @@ tumor与MRI的简介，ViT：用于图像的transformer；UNETR首个将ViT应�
                 <div class="comments-container mt-10 w-full ">
     <div id="comment-anchor" class="w-full h-2.5"></div>
     <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
-        评论
+        Comments
     </div>
     
 
@@ -651,11 +677,12 @@ tumor与MRI的简介，ViT：用于图像的transformer；UNETR首个将ViT应�
         <div class="toc-content-container">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <div class="toc-title">目录</div>
-        <div class="page-title">来自钱神</div>
+        <div class="toc-title">On this page</div>
+        <div class="page-title">Transformer系列</div>
         <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#attention-is-all-you-need"><span class="nav-text">Attention is all you need</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#an-image-is-worth-16x16-wordstransformers-for-image-recognition-at-scale"><span class="nav-text">AN
 IMAGE IS WORTH 16X16 WORDS:TRANSFORMERS FOR IMAGE RECOGNITION AT
-SCALE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#swin-unetr-swin-transformers-for-semantic-segmentation-of-brain-tumors-in-mri-images"><span class="nav-text">Swin
+SCALE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#unetrtransformers-for-3d-medical-image-segmentation"><span class="nav-text">UNETR:Transformers
+for 3D Medical Image Segmentation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#swin-unetr-swin-transformers-for-semantic-segmentation-of-brain-tumors-in-mri-images"><span class="nav-text">Swin
 UNETR: Swin Transformers for Semantic Segmentation of Brain Tumors in
 MRI Images</span></a></li></ol>
 
@@ -690,7 +717,7 @@ MRI Images</span></a></li></ol>
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        共撰写了 6 篇文章
+                        6 posts in total
                     </span>
                     
                 </p>
@@ -701,26 +728,26 @@ MRI Images</span></a></li></ol>
             <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
                 
                     <span id="busuanzi_container_site_uv" class="lg:!block">
-                        <span class="text-sm">访问人数</span>
+                        <span class="text-sm">VISITOR COUNT</span>
                         <span id="busuanzi_value_site_uv"></span>
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv" class="lg:!block">
-                        <span class="text-sm">总访问量</span>
+                        <span class="text-sm">TOTAL PAGE VIEWS</span>
                         <span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
-            <span class="lg:block text-sm">由 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a> 驱动</span>
-            <span class="text-sm lg:block">主题&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.7.3</a></span>
+            <span class="lg:block text-sm">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a></span>
+            <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.7.3</a></span>
         </div>
         
         
             <div>
-                博客已运行 <span class="odometer" id="runtime_days" ></span> 天 <span class="odometer" id="runtime_hours"></span> 小时 <span class="odometer" id="runtime_minutes"></span> 分钟 <span class="odometer" id="runtime_seconds"></span> 秒
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
             </div>
         
         

@@ -13,7 +13,7 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="http://TheoHNO325.github.io/2024/11/04/notes1/"/>
+    <link rel="canonical" href="http://TheoHNO325.github.io/2024/11/04/transformer/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
@@ -21,26 +21,29 @@
         <meta name="description" content="Attention is all you need 点乘Attention Q(dk),K(dk),V(dv)均为向量.Q与K点乘(matmul),除以维数的平方(scale)(防止dk过大时softmax爆炸),(mask),再经过softmax得到V的权重 应用中一系列得到lxk的矩阵,每一行为一个query的结果,对行进行softmax.V(kxv)有k个V,每个V在结果中的占比.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Transformer">
-<meta property="og:url" content="http://theohno325.github.io/2024/11/04/Notes1/index.html">
+<meta property="og:url" content="http://theohno325.github.io/2024/11/04/Transformer/index.html">
 <meta property="og:site_name" content="Cu(NO3)2">
 <meta property="og:description" content="Attention is all you need 点乘Attention Q(dk),K(dk),V(dv)均为向量.Q与K点乘(matmul),除以维数的平方(scale)(防止dk过大时softmax爆炸),(mask),再经过softmax得到V的权重 应用中一系列得到lxk的矩阵,每一行为一个query的结果,对行进行softmax.V(kxv)有k个V,每个V在结果中的占比.">
 <meta property="og:locale">
-<meta property="og:image" content="http://theohno325.github.io/2024/11/04/Notes1/attention.jpg">
-<meta property="og:image" content="http://theohno325.github.io/2024/11/04/Notes1/O1.jpg">
-<meta property="og:image" content="http://theohno325.github.io/2024/11/04/Notes1/PE.jpg">
-<meta property="og:image" content="http://theohno325.github.io/2024/11/04/Notes1/ViT.jpg">
-<meta property="og:image" content="http://theohno325.github.io/2024/11/04/Notes1/ViT2.jpg">
-<meta property="og:image" content="http://theohno325.github.io/2024/11/04/Notes1/magic.jpg">
-<meta property="og:image" content="http://theohno325.github.io/2024/11/04/Notes1/UNETR.jpg">
-<meta property="og:image" content="http://theohno325.github.io/2024/11/04/Notes1/sw.jpg">
-<meta property="og:image" content="http://theohno325.github.io/2024/11/04/Notes1/overview.jpg">
-<meta property="og:image" content="http://theohno325.github.io/2024/11/04/Notes1/transformer.jpg">
-<meta property="og:image" content="http://theohno325.github.io/2024/11/04/Notes1/Ow.jpg">
+<meta property="og:image" content="http://theohno325.github.io/2024/11/04/Transformer/attention.jpg">
+<meta property="og:image" content="http://theohno325.github.io/2024/11/04/Transformer/O1.jpg">
+<meta property="og:image" content="http://theohno325.github.io/2024/11/04/Transformer/PE.jpg">
+<meta property="og:image" content="http://theohno325.github.io/2024/11/04/Transformer/ViT.jpg">
+<meta property="og:image" content="http://theohno325.github.io/2024/11/04/Transformer/ViT2.jpg">
+<meta property="og:image" content="http://theohno325.github.io/2024/11/04/Transformer/magic.jpg">
+<meta property="og:image" content="http://theohno325.github.io/2024/11/04/Transformer/UNETR.jpg">
+<meta property="og:image" content="http://theohno325.github.io/2024/11/04/Transformer/sw.jpg">
+<meta property="og:image" content="http://theohno325.github.io/2024/11/04/Transformer/overview.jpg">
+<meta property="og:image" content="http://theohno325.github.io/2024/11/04/Transformer/transformer.jpg">
+<meta property="og:image" content="http://theohno325.github.io/2024/11/04/Transformer/Ow.jpg">
 <meta property="article:published_time" content="2024-11-05T03:22:32.000Z">
 <meta property="article:modified_time" content="2024-11-17T16:02:52.530Z">
 <meta property="article:author" content="xxt">
+<meta property="article:tag" content="paper">
+<meta property="article:tag" content="CV">
+<meta property="article:tag" content="MIS">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://theohno325.github.io/2024/11/04/Notes1/attention.jpg">
+<meta name="twitter:image" content="http://theohno325.github.io/2024/11/04/Transformer/attention.jpg">
     
     
     <!--- Icon Part-->
@@ -400,6 +403,25 @@ mjx-container[display="true"] + br {
 
     
     
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/paper/">paper</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/CV/">CV</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/MIS/">MIS</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
 
     
     
@@ -584,7 +606,7 @@ tumor与MRI的简介，ViT：用于图像的transformer；UNETR首个将ViT应�
             </li>
         
         <li>
-            <strong>リンク:</strong> https://theohno325.github.io/2024/11/04/Notes1/
+            <strong>リンク:</strong> https://theohno325.github.io/2024/11/04/Transformer/
         </li>
         <li>
             <strong>
@@ -603,6 +625,22 @@ tumor与MRI的简介，ViT：用于图像的transformer；UNETR首个将ViT应�
         
 
         
+            <ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
+                
+                    <li class="tag-item mx-0.5">
+                        <a href="/tags/paper/">#paper</a>&nbsp;
+                    </li>
+                
+                    <li class="tag-item mx-0.5">
+                        <a href="/tags/CV/">#CV</a>&nbsp;
+                    </li>
+                
+                    <li class="tag-item mx-0.5">
+                        <a href="/tags/MIS/">#MIS</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
 
         
 
@@ -612,13 +650,13 @@ tumor与MRI的简介，ViT：用于图像的transformer；UNETR首个将ViT应�
                     <div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
                         <a class="prev"
                         rel="prev"
-                        href="/2024/11/09/MT/"
+                        href="/2024/11/04/Notes1/"
                         >
                             <span class="left arrow-icon flex justify-center items-center">
                                 <i class="fa-solid fa-chevron-left"></i>
                             </span>
                             <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">MT</span>
+                                <span class="post-nav-title-item">Transformer</span>
                                 <span class="post-nav-item">前一篇</span>
                             </span>
                         </a>
@@ -628,10 +666,10 @@ tumor与MRI的简介，ViT：用于图像的transformer；UNETR首个将ViT应�
                     <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
                         <a class="next"
                         rel="next"
-                        href="/2024/11/04/Transformer/"
+                        href="/2024/11/03/Blank/"
                         >
                             <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">Transformer</span>
+                                <span class="post-nav-title-item">Cu(NO3)2&#39;s home</span>
                                 <span class="post-nav-item">次一篇</span>
                             </span>
                             <span class="right arrow-icon flex justify-center items-center">

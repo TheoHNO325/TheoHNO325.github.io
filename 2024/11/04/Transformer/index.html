@@ -37,7 +37,7 @@
 <meta property="og:image" content="http://theohno325.github.io/2024/11/04/Transformer/transformer.jpg">
 <meta property="og:image" content="http://theohno325.github.io/2024/11/04/Transformer/Ow.jpg">
 <meta property="article:published_time" content="2024-11-05T03:22:32.000Z">
-<meta property="article:modified_time" content="2024-11-17T16:02:52.530Z">
+<meta property="article:modified_time" content="2024-11-23T08:48:16.459Z">
 <meta property="article:author" content="xxt">
 <meta property="article:tag" content="paper">
 <meta property="article:tag" content="CV">
@@ -281,7 +281,7 @@ mjx-container[display="true"] + br {
                                    href="/"
                                         >
                                     <i class="fa-regular fa-house fa-fw"></i>
-                                    HOME
+                                    首页
                                     
                                 </a>
 
@@ -315,7 +315,7 @@ mjx-container[display="true"] + br {
                            href="/"
                         >
                             <span>
-                                HOME
+                                首页
                             </span>
                             
                                 <i class="fa-regular fa-house fa-sm fa-fw"></i>
@@ -334,15 +334,15 @@ mjx-container[display="true"] + br {
         <div class="statistics flex justify-around my-2.5">
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
         <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">8</div>
-        <div class="label text-third-text-color text-sm">Tags</div>
+        <div class="label text-third-text-color text-sm">标签</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
         <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">0</div>
-        <div class="label text-third-text-color text-sm">Categories</div>
+        <div class="label text-third-text-color text-sm">分类</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
         <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">7</div>
-        <div class="label text-third-text-color text-sm">Posts</div>
+        <div class="label text-third-text-color text-sm">文章</div>
     </a>
 </div>
     </div>
@@ -390,14 +390,14 @@ mjx-container[display="true"] + br {
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
         <span class="desktop">2024-11-05 03:22:32</span>
         <span class="mobile">2024-11-05 03:22:32</span>
-        <span class="hover-info">Created</span>
+        <span class="hover-info">创建</span>
     </span>
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-11-17 16:02:52</span>
-            <span class="mobile">2024-11-17 16:02:52</span>
-            <span class="hover-info">Updated</span>
+            <span class="desktop">2024-11-23 08:48:16</span>
+            <span class="mobile">2024-11-23 08:48:16</span>
+            <span class="hover-info">更新</span>
         </span>
     
 
@@ -588,6 +588,36 @@ decoder。</p>
 tumor与MRI的简介，ViT：用于图像的transformer；UNETR首个将ViT应用于医学影像分析的方法（补）</p>
 <p>本篇：Swin+UNETR</p>
 <p>![Swin][Swin.jpg]</p>
+<h3 id="bilinear-attention-network-low-rank-bilinearpooling">Bilinear
+attention network + Low-rank bilinearpooling</h3>
+<p>什么是双线性模型:应用于多模态学习任务.从两个特征提取器中获得同一数据两个侧面的特征,通过一系列操作融合得到一个特征(其中这个特征对于任何一个侧面都是线性的)</p>
+<p>attention:对于一个长度为N的向量x和长度为M的向量y,作外积并乘上相应的权重矩阵加上偏置,得到output
+fi.</p>
+<p>因为有点小贵,故加上low-rank
+pooling:把权重矩阵Wi低秩分解,由矩阵的秩的定理得Wi得秩一定小于U和V最小的那个,而d又可以随意选择,于是可以自由控制Wi的秩.</p>
+<p>fi可以被写成hadamard积(逐元素相乘,需要矩阵形状一样)的形式</p>
+<p>c个fi合起来变成向量,于是改一下变成MLP layer.</p>
+<h3 id="drugban">DrugBan</h3>
+<p>Drug–target interaction (DTI) prediction refers to the prediction of
+whether a given drug molecule will bind to a specific target and thus
+exert a targeted therapeutic effect.</p>
+<p>DTI is essentially decided by mutual effects between important
+molecular substructures in the drug compound and binding sites in the
+protein sequence.</p>
+<p>Interactions between drug and target are particularly related to
+their crucial substructures, thus separate global representation
+learning tends to limit the modeling capacity and prediction
+performance.</p>
+<p>(需要药物和靶向蛋白质的联合信息,而不是只能从单个抽取特征来预测)(双线性注意力)</p>
+<p>(并且由于化学物质种类太多,需要cross-domain的能力.)(CDAN)</p>
+<p>抽象:蛋白质分子-&gt;sequence P =
+(a1,a2,...an),每个a代表某个结构(amino acids) 药物:2dgraph
+G,由顶点(原子)和边(化学键)组成.</p>
+<p>我们需要得到:学习之后的模型可以学到PxG的表示空间,得到反应成功的概率p[0,1]</p>
+<figure>
+<img src="" alt="framework">
+<figcaption aria-hidden="true">framework</figcaption>
+</figure>
 
         </div>
 
@@ -595,27 +625,27 @@ tumor与MRI的简介，ViT：用于图像的transformer；UNETR首个将ViT应�
             <div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
                 <div class="article-copyright-info-container">
     <ul>
-        <li><strong>Title:</strong> Transformer</li>
-        <li><strong>Author:</strong> xxt</li>
-        <li><strong>Created at
+        <li><strong>标题:</strong> Transformer</li>
+        <li><strong>作者:</strong> xxt</li>
+        <li><strong>创建于
                 :</strong> 2024-11-05 03:22:32</li>
         
             <li>
-                <strong>Updated at
-                    :</strong> 2024-11-17 16:02:52
+                <strong>更新于
+                    :</strong> 2024-11-23 08:48:16
             </li>
         
         <li>
-            <strong>Link:</strong> https://theohno325.github.io/2024/11/04/Transformer/
+            <strong>链接:</strong> https://theohno325.github.io/2024/11/04/Transformer/
         </li>
         <li>
             <strong>
-                License:
+                版权声明:
             </strong>
             
 
             
-                This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a>.
+                本文章采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a> 进行许可。
             
         </li>
     </ul>
@@ -657,7 +687,7 @@ tumor与MRI的简介，ViT：用于图像的transformer；UNETR首个将ViT应�
                             </span>
                             <span class="title flex justify-center items-center">
                                 <span class="post-nav-title-item">Mathnotes</span>
-                                <span class="post-nav-item">Prev posts</span>
+                                <span class="post-nav-item">上一篇</span>
                             </span>
                         </a>
                     </div>
@@ -670,7 +700,7 @@ tumor与MRI的简介，ViT：用于图像的transformer；UNETR首个将ViT应�
                         >
                             <span class="title flex justify-center items-center">
                                 <span class="post-nav-title-item">Cu(NO3)2&#39;s home</span>
-                                <span class="post-nav-item">Next posts</span>
+                                <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex justify-center items-center">
                                 <i class="fa-solid fa-chevron-right"></i>
@@ -687,7 +717,7 @@ tumor与MRI的简介，ViT：用于图像的transformer；UNETR首个将ViT应�
                 <div class="comments-container mt-10 w-full ">
     <div id="comment-anchor" class="w-full h-2.5"></div>
     <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
-        Comments
+        评论
     </div>
     
 
@@ -732,7 +762,7 @@ tumor与MRI的简介，ViT：用于图像的transformer；UNETR首个将ViT应�
         <div class="toc-content-container">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <div class="toc-title">On this page</div>
+        <div class="toc-title">目录</div>
         <div class="page-title">Transformer</div>
         <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#attention-is-all-you-need"><span class="nav-text">Attention is all you need</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#an-image-is-worth-16x16-wordstransformers-for-image-recognition-at-scale"><span class="nav-text">AN
 IMAGE IS WORTH 16X16 WORDS:TRANSFORMERS FOR IMAGE RECOGNITION AT
@@ -740,7 +770,8 @@ SCALE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="
 for 3D Medical Image Segmentation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#swin-transformer-hierarchical-vision-transformer-using-shifted-windows"><span class="nav-text">Swin
 Transformer: Hierarchical Vision Transformer using Shifted Windows</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#swin-unetr-swin-transformers-for-semantic-segmentation-of-brain-tumors-in-mri-images"><span class="nav-text">Swin
 UNETR: Swin Transformers for Semantic Segmentation of Brain Tumors in
-MRI Images</span></a></li></ol>
+MRI Images</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bilinear-attention-network-low-rank-bilinearpooling"><span class="nav-text">Bilinear
+attention network + Low-rank bilinearpooling</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#drugban"><span class="nav-text">DrugBan</span></a></li></ol>
 
     </div>
 </div>
@@ -773,7 +804,7 @@ MRI Images</span></a></li></ol>
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        7 posts in total
+                        共撰写了 7 篇文章
                     </span>
                     
                 </p>
@@ -784,26 +815,26 @@ MRI Images</span></a></li></ol>
             <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
                 
                     <span id="busuanzi_container_site_uv" class="lg:!block">
-                        <span class="text-sm">VISITOR COUNT</span>
+                        <span class="text-sm">访问人数</span>
                         <span id="busuanzi_value_site_uv"></span>
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv" class="lg:!block">
-                        <span class="text-sm">TOTAL PAGE VIEWS</span>
+                        <span class="text-sm">总访问量</span>
                         <span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
-            <span class="lg:block text-sm">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a></span>
-            <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.7.3</a></span>
+            <span class="lg:block text-sm">由 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a> 驱动</span>
+            <span class="text-sm lg:block">主题&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.7.3</a></span>
         </div>
         
         
             <div>
-                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+                博客已运行 <span class="odometer" id="runtime_days" ></span> 天 <span class="odometer" id="runtime_hours"></span> 小时 <span class="odometer" id="runtime_minutes"></span> 分钟 <span class="odometer" id="runtime_seconds"></span> 秒
             </div>
         
         

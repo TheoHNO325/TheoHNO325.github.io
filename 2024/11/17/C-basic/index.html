@@ -18,22 +18,17 @@
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="1 7 指针和引用 引用 在定义引用时,必须要用某个现有的原始变量初始化,(int &amp;person &#x3D; student)并且不能再作为其他变量的引用.对引用操作等同于对原始变量的操作.输出引用的时候,得到的是地址. 两种出现&quot;&amp;&quot;的情况:  &amp;的前面有类型符(int float):必然是对引用的声明,定义了一个引用. 没有:取变量的地址,左边可以用指针接住">
-<meta property="og:type" content="article">
+        <meta property="og:type" content="article">
 <meta property="og:title" content="C++basic">
 <meta property="og:url" content="http://theohno325.github.io/2024/11/17/C-basic/index.html">
 <meta property="og:site_name" content="Cu(NO3)2">
-<meta property="og:description" content="1 7 指针和引用 引用 在定义引用时,必须要用某个现有的原始变量初始化,(int &amp;person &#x3D; student)并且不能再作为其他变量的引用.对引用操作等同于对原始变量的操作.输出引用的时候,得到的是地址. 两种出现&quot;&amp;&quot;的情况:  &amp;的前面有类型符(int float):必然是对引用的声明,定义了一个引用. 没有:取变量的地址,左边可以用指针接住">
 <meta property="og:locale">
-<meta property="og:image" content="http://theohno325.github.io/2024/11/17/C-basic/%E6%B3%A1%E6%B3%A1%E5%A0%82.jpg">
-<meta property="og:image" content="http://theohno325.github.io/2024/11/17/C-basic/%E5%AF%B9%E8%B1%A1%E7%A9%BA%E9%97%B4.jpg">
 <meta property="article:published_time" content="2024-11-18T01:04:43.000Z">
-<meta property="article:modified_time" content="2024-11-23T05:01:01.577Z">
+<meta property="article:modified_time" content="2024-12-09T10:23:33.571Z">
 <meta property="article:author" content="xxt">
 <meta property="article:tag" content="study">
 <meta property="article:tag" content="自救">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://theohno325.github.io/2024/11/17/C-basic/%E6%B3%A1%E6%B3%A1%E5%A0%82.jpg">
     
     
     <!--- Icon Part-->
@@ -219,7 +214,7 @@
         <div class="label text-third-text-color text-sm">分类</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">7</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">8</div>
         <div class="label text-third-text-color text-sm">文章</div>
     </a>
 </div>
@@ -259,7 +254,7 @@
                     <div class="author flex items-center">
                         <span class="name text-default-text-color text-lg font-semibold">xxt</span>
                         
-                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv1</span>
+                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv2</span>
                         
                     </div>
                     <div class="meta-info">
@@ -273,8 +268,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-11-23 05:01:01</span>
-            <span class="mobile">2024-11-23 05:01:01</span>
+            <span class="desktop">2024-12-09 10:23:33</span>
+            <span class="mobile">2024-12-09 10:23:33</span>
             <span class="hover-info">更新</span>
         </span>
     
@@ -316,336 +311,7 @@
 
 
         <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
-            <div class="highlight-container" data-rel="C++"><figure class="iseeu highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure></div>
-<h3 id="指针和引用">7 指针和引用</h3>
-<h4 id="引用">引用</h4>
-<p>在定义引用时,必须要用某个现有的原始变量初始化,(int &amp;person =
-student)并且不能再作为其他变量的引用.对引用操作等同于对原始变量的操作.输出引用的时候,得到的是地址.</p>
-<p>两种出现"&amp;"的情况:</p>
-<ol type="1">
-<li>&amp;的前面有类型符(int
-float):必然是对引用的声明,定义了一个引用.</li>
-<li>没有:取变量的地址,左边可以用指针接住.然后可以用*指针在地址上改掉原来的变量的值(在函数中尤其需要)</li>
-</ol>
-<p>不可以引用:int &amp;...</p>
-<ol type="1">
-<li>数组 a[9]</li>
-<li>指针 <em>p (但是可以int</em>&amp; p=q;q为指针)</li>
-<li>引用的引用 int &amp; &amp;p</li>
-<li>前面的类型是void</li>
-<li>用类型或者null初始化</li>
-</ol>
-<p>经典的Swap:</p>
-<p>Swap(int &amp;a,int &amp;b){ int t = a; //
-引用本身是个值,带上&amp;取地址 a =
-b;//修改引用,则原值也会变化,因为引用和原始变量共用一块地址 b = t; }</p>
-<h4 id="指针">指针</h4>
-<p>&amp;(引用):不是在声明的时候,也可被认为是取地址运算符.&amp;i:变量i的地址</p>
-<p>int <em>pi = &amp; i; 指针变量pi,初始化为i的地址.
-两者互为逆运算,&amp;对变量取地址,得到指向该变量的指针;
-</em>对地址取值,得到地址所指的变量.</p>
-<p><strong>三种安全的赋值方法</strong>:</p>
-<ol type="1">
-<li><p>int *p =
-NULL;(需要引入头文件stddef.h)NULL=0的常量但可以直接赋值给指针,表示指针不指向任何内存区域</p></li>
-<li><p>int *p = new int; ... delete p;</p></li>
-<li><p>int *p = a;(a为初始化过的变量地址)</p></li>
-</ol>
-<p>否则,若*p未赋值就改变值,将会随机改变一个内存地址的变量,十分危险</p>
-<p><strong>指针的运算</strong>: 加减:以其指向类型的字长为单位
-相减:指针之间的距离 数组变量</p>
-<p>相等:== != 值是否相等</p>
-<h3 id="数组">8 数组</h3>
-<h4 id="一维数组">一维数组</h4>
-<p>定义了一块连续的空间，数组元素按序存放在这块空间中,数组名字是数组首元素的内存地址.空间的大小等于元素数*每个元素所占
-的空间大小，如定义int a[10]，将占用了40个字节空间，因为每个整型数占 (1
-Byte= 8 bit)4个字节。</p>
-<p>初始化:初始化的长度短于要被初始化的数组元素数目，那么剩余元素被初始化为0.初始化的可以不定义长度.</p>
-<p>动态编程:new &amp; delete</p>
-<h4 id="二维数组有点可怕">二维数组(有点可怕)</h4>
-<div class="highlight-container" data-rel="C++"><figure class="iseeu highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a</span><br></pre></td></tr></table></figure></div>
-<h3 id="结构体与联合体">9 结构体与联合体</h3>
-<div class="highlight-container" data-rel="C++"><figure class="iseeu highlight c++"><figcaption><span>Struct</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">date</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> month;</span><br><span class="line">    <span class="type">int</span> day;</span><br><span class="line">    <span class="type">int</span> year;</span><br><span class="line">&#125; dayone; <span class="comment">// 马上声明变量</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">person</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">char</span> name[<span class="number">12</span>];</span><br><span class="line">    <span class="type">char</span> gender;</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">int</span> age;</span><br><span class="line">    <span class="keyword">struct</span> <span class="title class_">date</span> birthday; <span class="comment">//结构体的嵌套</span></span><br><span class="line">&#125;; <span class="comment">//注意分号</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">person</span> student; <span class="comment">//说明了一个变量,产生实体,才会分配具体的内存空间</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">person</span> myself = &#123;<span class="string">&quot;Asuka&quot;</span>,<span class="string">&#x27;F&#x27;</span>,<span class="number">14</span>,&#123;<span class="number">12</span>,<span class="number">2</span>,<span class="number">1983</span>&#125;&#125;; <span class="comment">//初始化,若有嵌套则套一层&#123;&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="type">char</span> a = myself.gender;<span class="comment">//访问元素</span></span><br><span class="line">myself.name[<span class="number">0</span>] = <span class="string">&#x27;O&#x27;</span>; <span class="comment">//改结构变量的数组成员</span></span><br><span class="line">myself.birthday.month = <span class="number">1</span>; <span class="comment">//再来一个.,逐层引用</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//对结构进行整体操作的运算只有赋值&quot;=&quot;和取地址&quot;&amp;&quot;.不可以整体输出结构体,会报错</span></span><br><span class="line"></span><br><span class="line">student = myself;<span class="comment">//结构变量整体赋值,类型必须相同</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">date</span> *ptr = &amp;dayone <span class="comment">//结构变量取地址.</span></span><br><span class="line"></span><br><span class="line">cin &gt;&gt; student.name &gt;&gt; student.gender &gt;&gt; student.age&gt;&gt;endl;</span><br><span class="line"></span><br><span class="line">myself.birthday.day++;<span class="comment">//可以参与运算</span></span><br><span class="line"></span><br><span class="line">cout &lt;&lt; ptr &lt;&lt; endl; <span class="comment">// 0x5ffe44</span></span><br><span class="line"></span><br><span class="line">cout &lt;&lt; <span class="built_in">sizeof</span>(*ptr) &lt;&lt; endl; <span class="comment">//12</span></span><br><span class="line">cout &lt;&lt; <span class="built_in">sizeof</span>(myself)&lt;&lt; endl; <span class="comment">//32,所占内存空间的大小是其全体成员所占空间的总和</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">person</span> superstars[<span class="number">12</span>];<span class="comment">//结构体数组</span></span><br><span class="line">superstars[<span class="number">3</span>] = &#123;<span class="string">&quot;Asuka&quot;</span>,<span class="string">&#x27;F&#x27;</span>,<span class="number">14</span>,&#123;<span class="number">12</span>,<span class="number">2</span>,<span class="number">1983</span>&#125;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
-<p><strong>总结1</strong></p>
-<div class="highlight-container" data-rel="C++"><figure class="iseeu highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">somebody</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">char</span> name[<span class="number">30</span>];</span><br><span class="line">    <span class="type">int</span> score;</span><br><span class="line">    <span class="type">int</span> *ptr; <span class="comment">// 指针作为结构体成员</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">somebody</span> ohman;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">somebody</span> *man = &amp;ohman; <span class="comment">// 结构体指针</span></span><br><span class="line"></span><br><span class="line">(*man).score = <span class="number">0</span>; <span class="comment">//通过指针访问的正确方法1</span></span><br><span class="line">man-&gt;score = <span class="number">0</span>;<span class="comment">//正确方法2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 错误!!!! man-&gt;name = &quot;Xiao&quot;; 表达式必须是可修改的左值,此时左值为一个指针</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">strcpy</span>(man-&gt;name,<span class="string">&quot;Xiao&quot;</span>); <span class="comment">//正确</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
-<p><strong>总结2</strong></p>
-<p>用指向结构体变量（或数组元素）的指针作实参，将结构体变量（或数组元素）的地址传给形参。</p>
-<p>函数:接受指针void func(<typename> *ptr)</p>
-<p>传递:用引用 func(&amp;stu)</p>
-<p>这样形参就是地址,实参...唉我搞不清楚,上代码吧</p>
-<div class="highlight-container" data-rel="C++"><figure class="iseeu highlight c++"><figcaption><span>改变元素的方法</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">Student</span> &#123;</span><br><span class="line">    string name;</span><br><span class="line">    <span class="type">int</span> age;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 函数，接收指向结构体的指针作为参数</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">updateStudentInfo</span><span class="params">(<span class="keyword">struct</span> Student *ptr)</span> </span>&#123;</span><br><span class="line">    ptr-&gt;name = <span class="string">&quot;Alice&quot;</span>;</span><br><span class="line">    ptr-&gt;age = <span class="number">21</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 创建一个结构体变量</span></span><br><span class="line">     <span class="keyword">struct</span> <span class="title class_">Student</span> student = &#123;<span class="string">&quot;Bob&quot;</span>, <span class="number">20</span>&#125;;</span><br><span class="line">    </span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Before update:&quot;</span> &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Name: &quot;</span> &lt;&lt; student.name &lt;&lt; <span class="string">&quot;, Age: &quot;</span> &lt;&lt; student.age &lt;&lt; endl;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 将结构体变量的地址传递给函数</span></span><br><span class="line">    <span class="built_in">updateStudentInfo</span>(&amp;student);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-<p>道理是一样的,虽然对我来说很难理解.形参接受地址(不带*的指针,数组的名字(也就是它的首地址),变量的引用),得到地址之后就可以从地址上改数据/获得数据</p>
-<div class="highlight-container" data-rel="C++"><figure class="iseeu highlight c++"><figcaption><span>改变结构体数组的结构体的方法</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">Student</span> &#123;</span><br><span class="line">    string name;</span><br><span class="line">    <span class="type">int</span> age;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 函数，接收指向结构体数组首地址的指针(地址)作为参数</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">updateStudentInfo</span><span class="params">(<span class="keyword">struct</span> Student stu[])</span> </span>&#123;</span><br><span class="line">    stu[<span class="number">0</span>].name = <span class="string">&quot;halo&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 创建一个结构体变量</span></span><br><span class="line">    Student student stu[<span class="number">3</span>],*p=bob;</span><br><span class="line">    </span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Before update:&quot;</span> &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Name: &quot;</span> &lt;&lt; stu[<span class="number">0</span>].name &lt;&lt; <span class="string">&quot;, Age: &quot;</span> &lt;&lt; student.age &lt;&lt; endl;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 将结构体变量的地址(p)传递给函数</span></span><br><span class="line">    <span class="built_in">updateStudentInfo</span>(p);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-<p>于是这样就可以通过指针来改结构体的值/获得结构体的成员数据.</p>
-<p><strong>总结3</strong></p>
-<h4 id="定义自己的类型名-typedef">定义自己的类型名 typedef</h4>
-<p>typedef int INTEGER; 指定INTEGER代表int类型</p>
-<p>typedef float REAL; 指定REAL代表float类型</p>
-<div class="highlight-container" data-rel="C++"><figure class="iseeu highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">char</span> name[<span class="number">12</span>];</span><br><span class="line">    <span class="type">char</span> sex;</span><br><span class="line">&#125; person;</span><br><span class="line">person student; <span class="comment">//指定person代表这样一个struct类型</span></span><br></pre></td></tr></table></figure></div>
-<h4 id="共用体">共用体</h4>
-<p>使几个不同的变量共享同一段内存的结构.</p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><figcaption><span>HowToDefineAUnionlang:C++</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">union Data&#123;</span><br><span class="line">    int i; //size=4</span><br><span class="line">    char ch; // 1</span><br><span class="line">    float f; //4</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">cout &lt;&lt; sizeof(union Data) &lt;&lt; endl; //4,共用体变量所占的内存长度等于最长的成员的长度</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
-<p>共用体变量中起作用的成员是最后一次被赋值的成员，在对共用体变量中的一个成员赋值后，原有变量存储单元中的值就取代.</p>
-<p>初始化共用体变量时,初始化表中只能有一个常量.各成员的地址都是同一地址.</p>
-<p>不能对共用体变量名赋值，也不能企图引用变量名来得到一个值.</p>
-<p>如何初始化共用体:</p>
-<div class="highlight-container" data-rel="C++"><figure class="iseeu highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span>                           </span><br><span class="line">&#123; </span><br><span class="line">    <span class="type">int</span> num; </span><br><span class="line">    <span class="type">char</span> name[<span class="number">10</span>]; </span><br><span class="line">    <span class="type">char</span> sex; </span><br><span class="line">    <span class="type">char</span> job;</span><br><span class="line">    <span class="keyword">union</span>  <span class="title class_">Categ</span>  category;</span><br><span class="line">&#125;person[<span class="number">2</span>]; </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    person[<span class="number">0</span>] = &#123;<span class="number">1</span>,<span class="string">&quot;li&quot;</span>,<span class="string">&#x27;f&#x27;</span>,<span class="string">&#x27;s&#x27;</span>,&#123;<span class="number">301</span>&#125;&#125;;</span><br><span class="line">    person[<span class="number">1</span>] = &#123;<span class="number">2</span>,<span class="string">&quot;aa&quot;</span>,<span class="string">&#x27;M&#x27;</span>,<span class="string">&#x27;t&#x27;</span>,&#123;.position=<span class="string">&quot;prof&quot;</span>&#125;&#125;; <span class="comment">//初始化位置不是第一个的共有体变量需要表明.+名字</span></span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; person[<span class="number">0</span>].category.clas &lt;&lt; <span class="string">&quot;\t&quot;</span> &lt;&lt; person[<span class="number">0</span>].category.position &lt;&lt;endl ; <span class="comment">//301,错误输出</span></span><br><span class="line">    cout &lt;&lt; person[<span class="number">1</span>].category.position &lt;&lt; <span class="string">&quot;\t&quot;</span> &lt;&lt; person[<span class="number">1</span>].category.clas&lt;&lt; endl; <span class="comment">//prof,1718579824</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-<p>例子:将两个有许多重合的属性的struct合并到一起,重合的部分可用共用体表示.</p>
-<h4 id="枚举类型">枚举类型</h4>
-<div class="highlight-container" data-rel="C++"><figure class="iseeu highlight c++"><figcaption><span>HowToEnum</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum</span> <span class="title class_">Weekday</span>&#123;sun,mon,tue, wed,thu,fri,sat&#125;;<span class="comment">//这些是枚举常量,标识符(有名字)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">enum</span> <span class="title class_">Weekday</span> workday,weekend; <span class="comment">//枚举变量</span></span><br><span class="line"></span><br><span class="line">workday=mon; <span class="comment">//ok</span></span><br><span class="line">weekday=sunday; <span class="comment">//not ok,不可以赋值成枚举体里没有的标识符</span></span><br><span class="line">sun = <span class="number">0</span>;<span class="comment">//not ok,不能对它们赋值</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
-<p>每一个枚举元素都代表一个整数,编译器按定义时的顺序默认它们的值为0,1,2,3,4,5...</p>
-<p>也可以人为指定:(若不指定,默认第一个为0)</p>
-<p>enum Weekday{sun=7,mon=1,tue, wed,thu,fri,sat};// 往后顺序依次+1</p>
-<h3 id="类与对象">11类与对象</h3>
-<h4 id="类的定义格式">类的定义格式</h4>
-<div class="highlight-container" data-rel="C++"><figure class="iseeu highlight c++"><figcaption><span>HowToDefineAClass</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Student</span>&#123;</span><br><span class="line">    <span class="keyword">private</span>: <span class="comment">// 私有成员数据+成员函数</span></span><br><span class="line">        <span class="type">char</span> Name[<span class="number">20</span>];</span><br><span class="line">        <span class="type">float</span> math;</span><br><span class="line">        <span class="type">float</span> chinese;</span><br><span class="line">    <span class="keyword">public</span>: <span class="comment">// 公有成员数据+成员函数</span></span><br><span class="line">        <span class="type">float</span> ave;</span><br><span class="line">        <span class="function"><span class="type">void</span> <span class="title">SetName</span><span class="params">(<span class="type">char</span> *name)</span></span>;</span><br><span class="line">        <span class="function"><span class="type">void</span> <span class="title">SetMath</span><span class="params">(<span class="type">float</span> math)</span></span>;</span><br><span class="line">        <span class="function"><span class="type">void</span> <span class="title">SetChinese</span><span class="params">(<span class="type">float</span> ch)</span></span>;</span><br><span class="line">        <span class="function"><span class="type">float</span> <span class="title">GetAverage</span><span class="params">(<span class="type">void</span>)</span></span>;</span><br><span class="line">    <span class="keyword">protected</span>:<span class="comment">// 保护成员数据+成员函数</span></span><br><span class="line">        <span class="type">float</span> prot;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
-<h4 id="类的数据与函数">类的数据与函数</h4>
-<p><strong>私有成员</strong>:用private限定的成员,仅允许该类中的成员函数调用.</p>
-<p><strong>公有成员</strong>:用public限定的成员,可以在类内外自由使用.</p>
-<p><strong>保护成员</strong>:用protect限定的成员,只允许在类内及该类的派生类中使用的保护数据.(作用域:该类及派生类)</p>
-<p>限制词:private/public/protect;若未明定默认为private;可使用多次;。一旦使用了限制词，该限制词一直有效，直到下一个限制词开始为止.</p>
-<p><strong>成员函数</strong> 可在类内定义,也可在类外. 1. 类内定义
-<div class="highlight-container" data-rel="C++"><figure class="iseeu highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">B</span>&#123;</span><br><span class="line">    <span class="keyword">private</span>: </span><br><span class="line">        <span class="type">int</span> x,y;</span><br><span class="line">        <span class="type">float</span> a;</span><br><span class="line">    <span class="keyword">public</span>: </span><br><span class="line">        <span class="function"><span class="type">void</span> <span class="title">Setxy</span><span class="params">(<span class="type">int</span> a,<span class="type">int</span> b)</span></span></span><br><span class="line"><span class="function">        <span class="type">void</span> <span class="title">Print</span><span class="params">()</span></span>&#123;cout &lt;&lt; x &lt;&lt; y &lt;&lt; endl; &#125;<span class="comment">//注意括号和分号</span></span><br><span class="line">        <span class="function"><span class="type">float</span> &amp;<span class="title">Geta</span><span class="params">(<span class="type">void</span>)</span></span>&#123;<span class="keyword">return</span> a;&#125;<span class="comment">//将返回a的引用</span></span><br><span class="line">    &#125;;b1</span><br></pre></td></tr></table></figure></div> 2. 类外定义 <div class="highlight-container" data-rel="C++"><figure class="iseeu highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">B</span>&#123;</span><br><span class="line">    <span class="keyword">private</span>: </span><br><span class="line">        <span class="type">int</span> x,y;</span><br><span class="line">    <span class="keyword">public</span>: </span><br><span class="line">        <span class="function"><span class="type">void</span> <span class="title">Setxy</span><span class="params">(<span class="type">int</span> a,<span class="type">int</span> b)</span></span></span><br><span class="line"><span class="function">&#125;</span>;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">B::Setxy</span><span class="params">(<span class="type">int</span> a,<span class="type">int</span> b)</span></span>&#123;</span><br><span class="line">    x = a;</span><br><span class="line">    y = b;</span><br><span class="line">&#125; <span class="comment">//&lt; type &gt; &lt; class_name &gt; :: &lt; func_name &gt; (&lt;参数表&gt;)</span></span><br></pre></td></tr></table></figure></div></p>
-<p><strong>通过函数给私有成员赋值</strong> 1.
-在定义成员数据时不能直接初始化,需要通过函数(为公有函数,可在类外调用)赋值.如上式的Setxy
-2. 也可以返回私有数据成员的引用来赋值 b1.Geta()=10;(死记硬背)</p>
-<p><strong>函数的重载与缺省</strong>
-重载时，函数的形参必须在类型或数目上不同.
-缺省即调用时该有值的地方没有,但是,若形参不完全缺省，则必须从形参的右边开始缺省。</p>
-<h4 id="构造函数与析构函数">构造函数与析构函数</h4>
-<p><strong>构造函数</strong>
-是类的成员函数，函数名必须与类名相同.在创建对象时，使用给定的值来将对象初始化.可以带参数、可以重载，同时没有返回值.必须放在公有的成员函数里,也可放到保护里(如果定义的类仅用于派生其他类)</p>
-<div class="highlight-container" data-rel="C++"><figure class="iseeu highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">A</span>&#123;</span><br><span class="line">    <span class="keyword">private</span>: </span><br><span class="line">        <span class="type">int</span> x,y;</span><br><span class="line">    <span class="keyword">public</span>: </span><br><span class="line">        <span class="built_in">A</span>(<span class="type">int</span> a,<span class="type">int</span> b)&#123;</span><br><span class="line">            x=a;</span><br><span class="line">            y=b;</span><br><span class="line">        &#125; <span class="comment">//不能有类型</span></span><br><span class="line">        <span class="type">float</span> m,n;</span><br><span class="line">        <span class="built_in">A</span>()&#123;x=<span class="number">0</span>,y=<span class="number">0</span>&#125; <span class="comment">// 重载,实例化对象时可以用</span></span><br><span class="line">        <span class="built_in">A</span>()&#123;m=<span class="number">0</span>,n=<span class="number">0</span>&#125; <span class="comment">// 也可以给公有定义,也可以缺省</span></span><br><span class="line">        <span class="type">void</span> <span class="built_in">Setxy</span>(<span class="type">int</span> a,<span class="type">int</span> b)</span><br><span class="line">        &#123;x=a;y=b;&#125; <span class="comment">// 注意分号</span></span><br><span class="line">        <span class="function"><span class="type">void</span> <span class="title">Printxy</span><span class="params">()</span></span>&#123;cout &lt;&lt; x &lt;&lt; <span class="string">&quot;\t&quot;</span> &lt;&lt; y;&#125; <span class="comment">// 注意分号</span></span><br><span class="line">        <span class="function"><span class="type">void</span> <span class="title">Printmn</span><span class="params">()</span></span>&#123;cout &lt;&lt; m &lt;&lt; <span class="string">&quot;\t&quot;</span> &lt;&lt; n;&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div>
-<p>有了构造函数,我们就不再需要在创建对象之后再调用一遍函数了.(类似python的__init__(self))</p>
-<p><strong>可以copy的构造函数</strong>
-甚至还可以将另一个对象的引用作为构造函数的参数,这样就直接复制了.</p>
-<div class="highlight-container" data-rel="C++"><figure class="iseeu highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">A</span>&#123;</span><br><span class="line">    <span class="keyword">private</span>: </span><br><span class="line">        <span class="type">int</span> x,y;</span><br><span class="line">    <span class="keyword">public</span>: </span><br><span class="line">        <span class="built_in">A</span>(<span class="type">int</span> a,<span class="type">int</span> b)&#123;</span><br><span class="line">            x=a;</span><br><span class="line">            y=b;</span><br><span class="line">        &#125; <span class="comment">//不能有类型</span></span><br><span class="line">        <span class="built_in">A</span>(A &amp;a) <span class="comment">// 类名+&amp;+同类型对象</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="function">A <span class="title">a1</span><span class="params">(<span class="number">2</span>,<span class="number">3</span>)</span></span>;</span><br><span class="line">    <span class="function">A <span class="title">a2</span><span class="params">(a1)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-<p>其实,如果不定义这个卡卡西函数,系统会自动生成一个隐含的.于是可以自动赋值.(A
-a3=a1;A a2(a1) //可以这样直接赋值)</p>
-<figure>
-<img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="泡泡堂.jpg"
-                      alt="ppt" 
-                >
-<figcaption aria-hidden="true">ppt</figcaption>
-</figure>
-<p>如果没有定义构造函数,系统将自动产生一个缺省的构造函数A(){},此时我们不能在实例化时直接赋值.
-<strong>不存在没有构造函数的对象</strong>,所有对象在定义时调用构造函数.</p>
-<p><strong>new运算符</strong> 动态建立对象</p>
-<div class="highlight-container" data-rel="C++"><figure class="iseeu highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">A *pa1, *pa2;</span><br><span class="line">pa1 = <span class="keyword">new</span> <span class="built_in">A</span>(<span class="number">3</span>,<span class="number">5</span>);</span><br><span class="line">pa2 = <span class="keyword">new</span> A; <span class="comment">// pa2自动调用A()&#123;&#125;,x=0,y=0</span></span><br><span class="line"><span class="keyword">delete</span> pa1;</span><br><span class="line"><span class="keyword">delete</span> pa2;<span class="comment">//用完了要释放</span></span><br></pre></td></tr></table></figure></div>
-<p>总之它就是这么定义的,不管什么构造在堆上还是栈上...new完要delete</p>
-<p><strong>析构函数</strong> ~A(){}
-撤消对象时(例:作用域退出/程序结束)由系统自动调用,不允许重载,不能带有任何参数，不能有返回值，不指定函数类型.</p>
-<p>如果忘记定义析构函数了,系统会自动产生缺省的.
-但如果用new了,必须显示定义一个来delete.</p>
-<h4 id="对象">对象</h4>
-<p>类的变量(实例),具有实际的存储空间.</p>
-<p><strong>定义格式</strong>: 1. 类名 对象名1,对象名2,...;(局部对象) 2.
-在定义完类的最后一个大括号之后 对象名1,对象名2;(全局对象)</p>
-<p><strong>调用对象的成员</strong> "."</p>
-<div class="highlight-container" data-rel="C++"><figure class="iseeu highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">A</span>&#123;</span><br><span class="line">    <span class="keyword">private</span>: </span><br><span class="line">        <span class="type">int</span> x,y;</span><br><span class="line">    <span class="keyword">public</span>: </span><br><span class="line">        <span class="type">float</span> m,n;</span><br><span class="line">        <span class="function"><span class="type">void</span> <span class="title">Setxy</span><span class="params">(<span class="type">int</span> a,<span class="type">int</span> b)</span></span></span><br><span class="line"><span class="function">        </span>&#123;x=a;y=b;&#125; <span class="comment">// 注意分号</span></span><br><span class="line">        <span class="function"><span class="type">void</span> <span class="title">Printxy</span><span class="params">()</span></span>&#123;cout &lt;&lt; x &lt;&lt; <span class="string">&quot;\t&quot;</span> &lt;&lt; y;&#125; <span class="comment">// 注意分号</span></span><br><span class="line">        <span class="function"><span class="type">void</span> <span class="title">Printmn</span><span class="params">()</span></span>&#123;cout &lt;&lt; m &lt;&lt; <span class="string">&quot;\t&quot;</span> &lt;&lt; n;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    A a1,a2;</span><br><span class="line">    a<span class="number">1.</span>m = <span class="number">10</span>;a<span class="number">1.</span>n = <span class="number">20</span>;</span><br><span class="line">    <span class="comment">// a1.x = 10非法</span></span><br><span class="line">    a<span class="number">1.</span><span class="built_in">Setxy</span>(<span class="number">2</span>,<span class="number">5</span>);</span><br><span class="line">    a<span class="number">1.</span><span class="built_in">Printxy</span>();</span><br><span class="line">    a<span class="number">1.</span><span class="built_in">Printmn</span>();</span><br><span class="line">    a2 = a1; <span class="comment">// 同类型的对象之间可以整体赋值</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-<p>注意:用成员选择运算符“.”只能访问对象的公有成员，而不能访问对象的私有成员或保护成员。若要访问对象的私有的数据成员，只能通过对象的公有成员函数来获取。</p>
-<h4 id="时间差">时间差</h4>
-<ol type="1">
-<li>对于全局定义的对象（在函数外定义的对象），在程序开始执行时，调用构造函数；到程序结束时，调用析构函数</li>
-<li>对于局部定义的对象（在函数内定义的对象），当程序执行到定义对象的地方时，调用构造函数；在退出对象的作用域时，调用析构函数.</li>
-<li>用static定义的局部对象，在首次到达对象的定义时调用构造函数;到程序结束时，调用析构函数;并且static只能定义一次!(所以才有能力只在程序结束时释放)</li>
-<li>对于用new运算符动态生成的对象，在产生对象时调用构造函数，只有使用delete运算符来释放对象时，才调用析构函数。若不使用delete来撤消动态生成的对象，程序结束时，对象仍存在，并占用相应的存储空间，即系统不能自动地调用析构函数来撤消动态生成的对象.(new对象必须用delete来激法析构函数)</li>
-</ol>
-<p>new 数组也是同理,且delete必须加上[],否则只能释放第0个元素.(delete
-[]pa1;)</p>
-<h4 id="开始套娃">开始套娃</h4>
-<p><strong>类的嵌套</strong> <div class="highlight-container" data-rel="C++"><figure class="iseeu highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">待补充</span><br></pre></td></tr></table></figure></div></p>
-<p>在实例化A(定义类A的对象)时,为嵌套类的对象分配空间,嵌套类的作用域在类A的定义结束时结束,也就是说,在类外不能实例化嵌套类.</p>
-<p><strong>类的指针</strong> <div class="highlight-container" data-rel="C++"><figure class="iseeu highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">A *p; </span><br><span class="line">A a1;</span><br><span class="line">p = &amp; a1; <span class="comment">// 给指针赋值</span></span><br><span class="line">p-&gt;<span class="built_in">Setxy</span>(<span class="number">2</span>,<span class="number">3</span>);</span><br><span class="line">p-&gt;<span class="built_in">Printxy</span>(); <span class="comment">// 通过指针调用成员函数</span></span><br></pre></td></tr></table></figure></div></p>
-<p><strong>类的数组</strong> <div class="highlight-container" data-rel="C++"><figure class="iseeu highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Stu stu[<span class="number">3</span>];</span><br><span class="line">Stu *pstu;</span><br><span class="line">pstu = stu;</span><br><span class="line">stu[<span class="number">0</span>].<span class="built_in">SetStudent</span>(<span class="string">&quot;Xinjigu&quot;</span>,<span class="number">90</span>,<span class="number">90</span>)</span><br><span class="line">stu[<span class="number">1</span>].<span class="built_in">SetStudent</span>(<span class="string">&quot;Asuka&quot;</span>,<span class="number">90</span>,<span class="number">90</span>)</span><br><span class="line">stu[<span class="number">2</span>].<span class="built_in">SetStudent</span>(<span class="string">&quot;Ling&quot;</span>,<span class="number">90</span>,<span class="number">90</span>)</span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">3</span>;i++)&#123;</span><br><span class="line">    pstu-&gt;<span class="built_in">Show</span>();</span><br><span class="line">    p++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></p>
-<p><strong>this指针</strong>
-当对一个对象调用成员函数时，编译程序先将对象的地址赋给this指针
-，然后调用成员函数，每次成员函数存取数据成员时，也隐含使用this 指针</p>
-<p>缺省说明:Stu *const this;</p>
-<h4 id="继承与派生">继承与派生</h4>
-<p>基类/父类 -&gt; 派生类/子类</p>
-<div class="highlight-container" data-rel="C++"><figure class="iseeu highlight c++"><figcaption><span>HowToDerive</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Student1</span>:<span class="keyword">public</span>/<span class="keyword">protected</span>/<span class="built_in">private</span>(<span class="keyword">default</span>) Student <span class="comment">//三种不同的派生方式</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">private</span>:</span><br><span class="line">        <span class="type">int</span> age;</span><br><span class="line">        string addr; <span class="comment">//新增数据成员</span></span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">        <span class="built_in">Studeng1</span>(<span class="type">char</span> name,<span class="type">int</span> math,<span class="type">int</span> ch,<span class="type">int</span> ag,string b):<span class="built_in">Student</span>(name,math,ch)&#123;</span><br><span class="line">            age = ag;</span><br><span class="line">            addr = b; <span class="comment">//对基类初始化+初始化派生类自己的成员</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="type">void</span> <span class="title">display</span><span class="params">()</span></span>&#123;</span><br><span class="line">            xxx;<span class="comment">//</span></span><br><span class="line">        &#125;<span class="comment">//新增成员函数</span></span><br><span class="line">        <span class="comment">//也可以用student自带的基类函数</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-<p><strong>抽象类</strong>
-构造函数与析构函数被保护,只能被用于派生,不能直接实例化.</p>
-<h4 id="上代码继承类">上代码(继承类)</h4>
-<div class="highlight-container" data-rel="C++"><figure class="iseeu highlight c++"><figcaption><span>HowToDerive</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Dot</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="type">float</span> x, y;</span><br><span class="line">    <span class="built_in">Dot</span>(<span class="type">float</span> x = <span class="number">0</span>, <span class="type">float</span> y = <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">this</span>-&gt;x = x;</span><br><span class="line">        <span class="keyword">this</span>-&gt;y = y;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">Print</span><span class="params">(<span class="type">void</span>)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;x= &quot;</span> &lt;&lt; x &lt;&lt; endl;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;y= &quot;</span> &lt;&lt; y &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;  <span class="comment">//别忘了分号</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Line</span> : <span class="keyword">public</span> Dot</span><br><span class="line">&#123;</span><br><span class="line">    Dot d1, d2; <span class="comment">// 默认为private初始化</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">Line</span>(Dot dot1, Dot dot2) : <span class="built_in">d1</span>(dot1), <span class="built_in">d2</span>(dot2)</span><br><span class="line">    &#123;</span><br><span class="line">        x = (d<span class="number">1.</span>x + d<span class="number">2.</span>x) / <span class="number">2</span>;</span><br><span class="line">        y = (d<span class="number">1.</span>y + d<span class="number">2.</span>y) / <span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">Show</span><span class="params">(<span class="type">void</span>)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;Dot1&quot;</span>;</span><br><span class="line">        d<span class="number">1.</span><span class="built_in">Print</span>(); <span class="comment">// Print不能直接放到cout后面,因为它没有返回值</span></span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;Dot2&quot;</span>;</span><br><span class="line">        d<span class="number">2.</span><span class="built_in">Print</span>();</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;center&quot;</span> &lt;&lt; x &lt;&lt; <span class="string">&#x27;\t&#x27;</span> &lt;&lt; y &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">float</span> a, b, c, d;</span><br><span class="line">    cin &gt;&gt; a &gt;&gt; b &gt;&gt; c &gt;&gt; d;</span><br><span class="line">    <span class="function">Dot <span class="title">d1</span><span class="params">(a, b)</span></span>;</span><br><span class="line">    <span class="function">Dot <span class="title">d2</span><span class="params">(c, d)</span></span>;</span><br><span class="line">    <span class="function">Line <span class="title">line</span><span class="params">(d1, d2)</span></span>;</span><br><span class="line">    line.<span class="built_in">Show</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
-<figure>
-<img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="对象空间.jpg"
-                      alt="对象空间" 
-                >
-<figcaption aria-hidden="true">对象空间</figcaption>
-</figure>
-<h4 id="运算符重载与模版">运算符重载与模版</h4>
-<p><类名> operator<运算符> (<参数表>)</p>
-<p>运算符: 只有一个操作数(如++),在重载这种运算符时，通常不能有参数;</p>
-<p>例:++ 前置后置不一样,需要区分</p>
-<p>前置: A operator ++ () {...;}</p>
-<p>后置: A operator ++(int) {...;}</p>
-<p>有二个操作数，只能带有一个参数。这参数可以是对象/对象的引用/其它类型的参数(但最好还是引用,节省空间)。</p>
-<p>不允许重载有三个操作数的运算符,以及作用域(::),条件(?:),点(.),指针系列(-&gt;
-*),预处理(#) 重载时运算符的优先级和结合律不能改变.</p>
-<h4 id="上代码重载运算符">上代码(重载运算符)</h4>
-<h4 id="模板">模板</h4>
-<p><strong>模板函数</strong>
-建立一个通用的函数，其返回值类型，形参的类型都不确定指定,所以可以匹配多种类型</p>
-<p>写法:</p>
-<p>template <typename T> template写成class也可以 T func1(T arr[],int
-len){ ... }</p>
-<p>所以调用的时候可以用不同类型的arr,只要在func1<typename>的typename里改成对应的类型就行了</p>
-<p>显式调用:func1<int>(arr,2);</p>
-<p>隐式调用:func1(arr,2);</p>
-<p>but隐式调用优先使用普通函数，只有普通函数不匹配才使用函数模板.</p>
-<p>函数模板只有在调用时，才会构建函数，而普通函数是在编译时</p>
-<p>普通函数调用时候可以发生自动类型转换，而函数模板不行</p>
-<p><strong>类模板</strong></p>
-<h4 id="上代码类模板">上代码(类模板)</h4>
-<div class="highlight-container" data-rel="C++"><figure class="iseeu highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Arr</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    T a, b;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">Arr</span>(T x, T y)</span><br><span class="line">    &#123;</span><br><span class="line">        a = x;</span><br><span class="line">        b = y;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;x= &quot;</span> &lt;&lt; x &lt;&lt; endl</span><br><span class="line">             &lt;&lt; <span class="string">&quot;y= &quot;</span> &lt;&lt; y &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function">T <span class="title">Area</span><span class="params">()</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 类的成员函数在类外实现时需要在函数定义之前进行模板声明，在成员函数名前写上“类名::”</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line">T Arr&lt;T&gt;::<span class="built_in">Area</span>() <span class="comment">// &lt;返回值类型&gt; Arr&lt;T&gt;::函数()</span></span><br><span class="line">&#123;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Area=&quot;</span> &lt;&lt; a * b; <span class="comment">// 必须用成员变量来计算</span></span><br><span class="line">    <span class="keyword">return</span> a * b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="function">Arr&lt;<span class="type">int</span>&gt; <span class="title">A</span><span class="params">(<span class="number">3</span>, <span class="number">4</span>)</span></span>;</span><br><span class="line">    <span class="function">Arr&lt;<span class="type">float</span>&gt; <span class="title">B</span><span class="params">(<span class="number">1.2</span>, <span class="number">4.3</span>)</span></span>; <span class="comment">// 实例化对象时别忘了带上名字!</span></span><br><span class="line">    B.<span class="built_in">Area</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-<h3 id="杂门">杂门</h3>
-<p><strong>作用域</strong>
-指程序中所说明的标识符在哪一个区间内有效，即在哪一个区间内可以使用或引用该标识符</p>
-<p>五类: 块作用域、文件作用域、函数原型作
-用域、函数作用域和类的作用域</p>
-<p><strong>块作用域</strong> 在块内说明的标识
-符，只能在该块内引用.作用域在该块内from标识符的说明处to块的结尾处。</p>
-<p><strong>局部变量</strong>
-在一个函数内部定义的变量(包括形参)或在一个块中定义的变量.
-其作用域成为块作用域. 1.
-主函数main中定义的变量，也只在主函数中有效，同样属于局部变量. 2.
-不同的函数可以使用相同名字的局部变量，它们在内存中分属不同的存储区间，互不干扰.<br />
-3. 变量名相同,局部更优先</p>
-<p><strong>文件作用域</strong>
-全局变量的作用域,在整个文件可以访问.缺省的作用范围:从定义全局变量的位置开始到该源程序文件结束.</p>
-<p><strong>全局变量</strong>
-在函数外定义的变量.其作用域称为<strong>文件作用域</strong>,在整个文件中可以访问.
-与块作用域的变量同名时,局部变量优先.</p>
-<div class="highlight-container" data-rel="C++"><figure class="iseeu highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a=<span class="number">3</span>,b=<span class="number">5</span>;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">max</span><span class="params">(<span class="type">int</span> a,<span class="type">int</span> b)</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> c;</span><br><span class="line">    c=a&gt;b?a:b;</span><br><span class="line">    <span class="keyword">return</span> c;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> a=<span class="number">8</span>; <span class="comment">//局部定义覆盖了全局变量a</span></span><br><span class="line">    cout &lt;&lt; <span class="built_in">max</span>(a,b) &lt;&lt; endl; <span class="comment">//输出8</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-<p><strong>选做8</strong></p>
-<p><strong>选做7:动态内存分配</strong></p>
-<p>new :
-动态地在堆内存上分配内存，并返回指向该内存块的<strong>指针</strong></p>
-<p>int* ptr = new int; int* ptr = new int(5);
-//分配一个整数的内存并初始化为5 int* arr = new int[10]; int* c = new
-char[10]; int* arr = new int[10]{1,2,3,4}; // 初始化 int* ptr = nullptr
-// 传入空指针,安全,但也需要delete</p>
-<p>delete:释放由 new 分配的内存</p>
-<p>delete ptr; delete[] arr; //释放数组内存要用delete[]</p>
-<p>如果忘记释放动态分配的内存，程序就会发生内存泄漏，导致内存浪费。</p>
-<h3 id="handicap-book">handicap book</h3>
-<h4 id="字符串">字符串</h4>
-<h5 id="char">char</h5>
-<p>数组形式定义(char
-name[]="Asuka"/{'A','s','u','k','a'},可明确大小)</p>
-<p>在初始化时,内存自动以null字符\0终止,</p>
-<p>函数:需要加上csstring头文件!</p>
-<ul>
-<li>strcpy(s1,s2) 复制2-&gt;1,需要先定义s1的大小</li>
-<li>strcat(s1,s2) 连接2-&gt;1的末尾,也可用+</li>
-<li>strlen(s1) s1的长度,并且就是字符的个数,不带\0</li>
-<li>strcmp(s1,s2) 比较大小</li>
-<li>strchr(s1,ch) 返回指针,指向s1中字符ch第一次出现的位置</li>
-<li>strstr(s1,s2) 返回指针,指向s1中字符串s2第一次出现的位置</li>
-</ul>
-<p>输出:</p>
-<p>直接printf(name),指向char首地址的指针,就可以输出整个char(但是!!!如果是int之类数组直接printf,只会输出一串地址)</p>
-<h5 id="string">string</h5>
-<p>不用声明大小.(string name="Asuka";)</p>
-<p>可以直接复制.(string idol;idol = name;)</p>
-<p>可以直接加.(string lalala = idol + name;)</p>
-<p>长度:lalala.size(),并且就是字符的个数,不带\0</p>
-<h4 id="读取字符串">读取字符串</h4>
-<div class="highlight-container" data-rel="C++"><figure class="iseeu highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> N=<span class="number">5</span>;</span><br><span class="line"><span class="type">char</span> num[<span class="number">6</span>];</span><br><span class="line">string name;</span><br><span class="line"><span class="type">int</span> score;</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">0</span>;i &lt; N;i++)&#123;</span><br><span class="line">    cin &gt;&gt; num &gt;&gt;name &gt;&gt;score;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-<p>char类型:遇到空格、换行或其他非字符的输入停止读取,开辟空间时需要比要求大一位("\0")</p>
-<p>string类型:cin
-会将所有连续的非空白字符（包括空格、字母、数字等）当作一个字符串，直到遇到空格、换行或其他分隔符为止</p>
-<p>如何读取带空格的string:getline(cin, name)</p>
-<p>int类型:只会读取有效的数字部分，遇到非数字字符时会停止读取</p>
-<h4 id="printf-格式化输出">printf 格式化输出</h4>
-<p>来自gpt:</p>
-<p>%[flags][width][.perc][F|N|h|l]type</p>
-<p>在 C++ 中，<code>printf</code>
-是一种用于格式化输出的函数。它使用一系列格式化标志来控制输出的外观。你提到的格式字符串
-<code>%[flags][width][.precision][length]type</code> 就是
-<code>printf</code> 输出格式的一个基本结构，每个部分的含义如下：</p>
-<ol type="1">
-<li><strong>flags（标志位）</strong>：
-<ul>
-<li><code>-</code> : 左对齐（默认是右对齐）。</li>
-<li><code>+</code> :
-强制显示符号（对于整数类型，如果是负数则显示负号，正数则显示加号）。</li>
-<li><code>0</code> :
-用零填充输出（如果数字的长度不足指定宽度，则前面填充零）。</li>
-<li><code>#</code> :
-对某些类型加上特殊符号，比如对浮点数显示<code>e</code>、对八进制数显示<code>0</code>前缀、对十六进制数显示<code>0x</code>。</li>
-<li><code>space</code> :
-在数字前面显示一个空格（正数前加空格，负数则直接显示负号）。</li>
-</ul></li>
-<li><strong>width（宽度）</strong>：
-<ul>
-<li>这是输出字段的最小宽度。如果实际输出的内容宽度小于这个宽度，则根据标志位（比如
-<code>0</code> 或
-<code>-</code>）填充空格或零。如果实际内容宽度大于这个值，则会显示完整内容。</li>
-</ul></li>
-<li><strong>.precision（精度）</strong>：
-<ul>
-<li>对于浮点数，表示小数点后保留的位数。</li>
-<li>对于字符串，表示最大字符数。</li>
-<li>对于整数，表示输出最少的数字位数，使用零填充不足的部分。</li>
-</ul></li>
-<li><strong>length（长度修饰符）</strong>：
-<ul>
-<li><code>h</code> : 指定短整数类型（如 <code>short</code> 或
-<code>unsigned short</code>）。</li>
-<li><code>l</code> : 指定长整数类型（如 <code>long</code> 或
-<code>unsigned long</code>）。</li>
-<li><code>ll</code> : 指定长长整数类型（如 <code>long long</code> 或
-<code>unsigned long long</code>）。</li>
-<li><code>j</code> : 指定适用于 <code>intmax_t</code>
-类型的整数类型。</li>
-<li><code>z</code> : 指定适用于 <code>size_t</code>
-类型的整数类型。</li>
-<li><code>t</code> : 指定适用于 <code>ptrdiff_t</code>
-类型的整数类型。</li>
-</ul></li>
-<li><strong>type（类型说明符）</strong>：
-<ul>
-<li><code>d</code> 或 <code>i</code> : 整数类型（有符号）。</li>
-<li><code>u</code> : 无符号整数。</li>
-<li><code>o</code> : 八进制整数。</li>
-<li><code>x</code> 或 <code>X</code> :
-十六进制整数（小写或大写字母）。</li>
-<li><code>f</code> : 浮动点数（浮点数，格式为固定小数点）。</li>
-<li><code>e</code> 或 <code>E</code> : 浮动点数（科学计数法）。</li>
-<li><code>g</code> 或 <code>G</code> : 浮动点数（自动选择 <code>f</code>
-或 <code>e</code>，以最短方式显示）。</li>
-<li><code>c</code> : 单个字符。</li>
-<li><code>s</code> : 字符串。</li>
-<li><code>p</code> : 指针地址。</li>
-<li><code>%</code> : 输出一个百分号字符。</li>
-</ul></li>
-</ol>
-<h3 id="其他格式化输出">其他格式化输出：</h3>
-<p><code>printf</code>
-确实还支持一些其他的格式化输出方法，除了标准的整数、浮点数、字符串输出，常见的还有：</p>
-<ul>
-<li><strong>宽字符和宽字符串</strong>：<code>wchar_t</code>
-类型的字符可以使用 <code>%lc</code> 来输出，宽字符串可以用
-<code>%ls</code> 来输出。</li>
-<li><strong>指针</strong>：输出指针的地址，使用 <code>%p</code>
-格式。</li>
-<li><strong>格式指定</strong>：在特定场景下可以通过 <code>*</code>
-来动态指定宽度和精度。</li>
-</ul>
-<h3 id="示例">示例：</h3>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> x = <span class="number">123</span>;</span><br><span class="line">    <span class="type">double</span> y = <span class="number">3.14159</span>;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%-10d\n&quot;</span>, x); <span class="comment">// 左对齐，宽度为 10</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%+10d\n&quot;</span>, x); <span class="comment">// 显示符号，宽度为 10</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%010d\n&quot;</span>, x); <span class="comment">// 用 0 填充，宽度为 10</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%.2f\n&quot;</span>, y);  <span class="comment">// 浮点数，保留两位小数</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%10.4f\n&quot;</span>, y); <span class="comment">// 浮点数，宽度 10，保留 4 位小数</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-<h3 id="总结">总结：</h3>
-<p><code>printf</code>
-是一个强大的格式化输出函数，可以通过设置不同的标志、宽度、精度和类型，来精确控制输出格式。你可以用它来输出各种类型的数据，并且支持复杂的格式化需求。</p>
+            
 
         </div>
 
@@ -660,7 +326,7 @@ name[]="Asuka"/{'A','s','u','k','a'},可明确大小)</p>
         
             <li>
                 <strong>更新于
-                    :</strong> 2024-11-23 05:01:01
+                    :</strong> 2024-12-09 10:23:33
             </li>
         
         <li>
@@ -700,6 +366,21 @@ name[]="Asuka"/{'A','s','u','k','a'},可明确大小)</p>
 
         
             <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+                
+                    <div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="prev"
+                        rel="prev"
+                        href="/2024/12/03/%E6%98%AF%E8%B0%81%E5%9C%A8%E8%A7%86%E5%A5%B8%E6%88%91/"
+                        >
+                            <span class="left arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">是谁在视奸我???</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
                 
                 
                     <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
@@ -773,7 +454,7 @@ name[]="Asuka"/{'A','s','u','k','a'},可明确大小)</p>
     <div class="post-toc">
         <div class="toc-title">目录</div>
         <div class="page-title">C++basic</div>
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%87%E9%92%88%E5%92%8C%E5%BC%95%E7%94%A8"><span class="nav-text">7 指针和引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E7%BB%84"><span class="nav-text">8 数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%93%E6%9E%84%E4%BD%93%E4%B8%8E%E8%81%94%E5%90%88%E4%BD%93"><span class="nav-text">9 结构体与联合体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1"><span class="nav-text">11类与对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9D%82%E9%97%A8"><span class="nav-text">杂门</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#handicap-book"><span class="nav-text">handicap book</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%BE%93%E5%87%BA"><span class="nav-text">其他格式化输出：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A4%BA%E4%BE%8B"><span class="nav-text">示例：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-text">总结：</span></a></li></ol>
+        
 
     </div>
 </div>
@@ -806,7 +487,7 @@ name[]="Asuka"/{'A','s','u','k','a'},可明确大小)</p>
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        共撰写了 7 篇文章
+                        共撰写了 8 篇文章
                     </span>
                     
                 </p>

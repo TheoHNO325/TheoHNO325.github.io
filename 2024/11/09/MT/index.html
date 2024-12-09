@@ -18,30 +18,21 @@
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="[Paper List]                               Temporal Ensembling for Semi-Supervised Learning[1]Mean teachers are better role models: Weight-averaged consistencytargets improve semi-supervised deep">
+        <meta name="description" content="#refplus, #refplus li{          padding:0;         margin:0;         list-style:none;     }；                         document.querySelectorAll(&quot;.refplus-num&quot;).forEach((ref) &#x3D;&gt; {         le">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MT">
 <meta property="og:url" content="http://theohno325.github.io/2024/11/09/MT/index.html">
 <meta property="og:site_name" content="Cu(NO3)2">
-<meta property="og:description" content="[Paper List]                               Temporal Ensembling for Semi-Supervised Learning[1]Mean teachers are better role models: Weight-averaged consistencytargets improve semi-supervised deep">
+<meta property="og:description" content="#refplus, #refplus li{          padding:0;         margin:0;         list-style:none;     }；                         document.querySelectorAll(&quot;.refplus-num&quot;).forEach((ref) &#x3D;&gt; {         le">
 <meta property="og:locale">
-<meta property="og:image" content="http://theohno325.github.io/2024/11/09/MT/%CE%A0-model.jpg">
-<meta property="og:image" content="http://theohno325.github.io/2024/11/09/MT/tem-ensem.jpg">
-<meta property="og:image" content="http://theohno325.github.io/2024/11/09/MT/futurework.jpg">
-<meta property="og:image" content="http://theohno325.github.io/2024/11/09/MT/mt.jpg">
-<meta property="og:image" content="http://theohno325.github.io/2024/11/09/MT/noisystu.jpg">
-<meta property="og:image" content="http://theohno325.github.io/2024/11/09/MT/medical1.jpg">
-<meta property="og:image" content="http://theohno325.github.io/2024/11/09/MT/dualt.jpg">
-<meta property="og:image" content="http://theohno325.github.io/2024/11/09/MT/mcf.jpg">
 <meta property="article:published_time" content="2024-11-10T01:48:10.000Z">
-<meta property="article:modified_time" content="2024-11-17T16:02:27.258Z">
+<meta property="article:modified_time" content="2024-12-09T10:23:56.657Z">
 <meta property="article:author" content="xxt">
 <meta property="article:tag" content="SSL">
 <meta property="article:tag" content="paper">
 <meta property="article:tag" content="CV">
 <meta property="article:tag" content="MIS">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://theohno325.github.io/2024/11/09/MT/%CE%A0-model.jpg">
     
     
     <!--- Icon Part-->
@@ -339,7 +330,7 @@ mjx-container[display="true"] + br {
         <div class="label text-third-text-color text-sm">分类</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">7</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">8</div>
         <div class="label text-third-text-color text-sm">文章</div>
     </a>
 </div>
@@ -379,7 +370,7 @@ mjx-container[display="true"] + br {
                     <div class="author flex items-center">
                         <span class="name text-default-text-color text-lg font-semibold">xxt</span>
                         
-                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv1</span>
+                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv2</span>
                         
                     </div>
                     <div class="meta-info">
@@ -393,8 +384,8 @@ mjx-container[display="true"] + br {
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-11-17 16:02:27</span>
-            <span class="mobile">2024-11-17 16:02:27</span>
+            <span class="desktop">2024-12-09 10:23:56</span>
+            <span class="mobile">2024-12-09 10:23:56</span>
             <span class="hover-info">更新</span>
         </span>
     
@@ -444,113 +435,7 @@ mjx-container[display="true"] + br {
 
 
         <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
-            <details class="[red]" data-header-exclude=""><summary><i class="fa-solid fa-chevron-right"></i>[Paper List] </summary>
-              <div class="content">
-              <ul><li>Temporal Ensembling for Semi-Supervised Learning<sup class="refplus-num"><a href="#ref-Link1">[1]</a></sup></li><li>Mean teachers are better role models: Weight-averaged consistencytargets improve semi-supervised deep learning results<sup class="refplus-num"><a href="#ref-Link2">[2]</a></sup></li><li>Self-training with Noisy Student improves ImageNet classification<sup class="refplus-num"><a href="#ref-Link3">[3]</a></sup></li><li>Semi-supervised Medical Image Segmentation through Dual-taskConsistency<sup class="refplus-num"><a href="#ref-Link4">[4]</a></sup></li><li>Switching Temporary Teachers for Semi-Supervised SemanticSegmentation<sup class="refplus-num"><a href="#ref-Link5">[5]</a></sup></li><li>MCF:Mutual Correction Framework for Semi-Supervised Medical ImageSegmentation<sup class="refplus-num"><a href="#ref-Link6">[6]</a></sup></li></ul>
-              </div>
-            </details>
-<h2 id="article-1">Article 1</h2>
-<p>self-ensembling-在训练网络不同的epoch中，使用不同的正则化和数据增广方法，为unlabeled取得“共识”.</p>
-<p>semi-supervised learning- 仅有部分训练数据有标签</p>
-<p>transform/stability
-loss-在另一篇论文里被提出，但与本文的方法相似。对每个小批量不同扰动n次，算总和loss。延续了general
-pseudo-ensemble agreement (PEA) regular ization framework of Bachman et
-al. (2014)与mutual exclusivity loss term (Sajjadi et al., 2016a)
-。本文可视作n=2的情况。</p>
-<p>Π-model &amp; Temporal-ensembling</p>
-<figure>
-<img lazyload="" src="/images/loading.svg" data-src="Π-model.jpg" alt="1">
-<figcaption aria-hidden="true">1</figcaption>
-</figure>
-<ol type="1">
-<li>Π-model</li>
-</ol>
-<p>对一批数据,同时含有无标签xi和有标签(xi,yi),两个分支同时输入经过不同增广处理和dropout设置的xi.得到最终结果y~i.</p>
-<p>对于有标签数据，损失函数由两部分构成：y~i与yi的cross-entropy
-loss与两个y~i之间的MSE.无标签数据仅有后者. 损失函数的权重w(t),为一个ramp
-up函数所定，随着时间逐渐增大（否则，模型得不到足够的来自有标签数据的有用信息。</p>
-<p>相似的模型：Γ-model.但该模型的一个分支不经过增广处理</p>
-<ol start="2" type="1">
-<li>Temporal-ensembling</li>
-</ol>
-<p>上述的Π-model可以大致看成是先对training
-set得到一个结果，并不更新参数，再使用相同的数据经过不同的数据增广和dropout得到被扰乱的预测结果。对这两个结果进行损失计算。但该模型的缺陷是会十分吵闹（？）</p>
-<p>随时间集成将过去的预测合并（ensemble）, 更新方式如下</p>
-<figure>
-<img lazyload="" src="/images/loading.svg" data-src="tem-ensem.jpg" alt="2">
-<figcaption aria-hidden="true">2</figcaption>
-</figure>
-<p>Z,z 初始化为0，慢慢向上加</p>
-<p>好处：快，一个epoch只需要过一遍数据集</p>
-<p>坏处：数据量大的时候会很慢（az）</p>
-<p>start-up bias:没有看懂，来自于Adam</p>
-<ol start="3" type="1">
-<li>Possible future work</li>
-</ol>
-<figure>
-<img lazyload="" src="/images/loading.svg" data-src="futurework.jpg" alt="3">
-<figcaption aria-hidden="true">3</figcaption>
-</figure>
-<p>由于运行过程中会存储每个minibatch在每个epoch的预测结果，所以可能可以加上一个方差正则化项来评估模型的确定性</p>
-<p>second raw moment-在Adam里似乎提到过，但不太记得了。</p>
-<h2 id="article-2">Article 2</h2>
-<p>Temporal
-ensembling的本质是对每个训练样本的预测结果进行指数平滑(exponential
-moving average). 本文首次引入 <strong>Mean Teacher</strong>,
-将模型的参数进行指数平滑。</p>
-<p>共识：a classification model should favor functions that give
-consistent output for similar data points</p>
-<figure>
-<img lazyload="" src="/images/loading.svg" data-src="mt.jpg" alt="4">
-<figcaption aria-hidden="true">4</figcaption>
-</figure>
-<p>一个training batch，先更新学生的参数，再指数平滑到老师上去。</p>
-<h2 id="article-3">Article 3</h2>
-<figure>
-<img lazyload="" src="/images/loading.svg" data-src="noisystu.jpg" alt="5">
-<figcaption aria-hidden="true">5</figcaption>
-</figure>
-<p>先用有标注数据训练teacher，训练完的teacher为无标注生成伪标签（soft/hard）
-让学生在所有数据上（使用teacher的伪标签）训练，加上noise（augmentaion/dropout/stochastic
-depth），让该学生成为下一轮的老师。该学生的预测数据成为下一轮的伪标签。</p>
-<p>knowledge distillation/expansion-</p>
-<p>datafiltering-</p>
-<p>balancing-</p>
-<h2 id="article-4">Article 4</h2>
-<p>此篇开始进入医学影像处理。</p>
-<figure>
-<img lazyload="" src="/images/loading.svg" data-src="medical1.jpg" alt="6">
-<figcaption aria-hidden="true">6</figcaption>
-</figure>
-<p>Dual-task体现在？在VNet的末端加上不同的输出层，一个f1生成pixel-wise
-map，另一f2为水平集函数，通过某种变换可以比较。</p>
-<p>L_DTC为f1与转化后的f2的MSE（有权重），L_LSF为反之。L_Seg为f1与真实标签的Dice
-loss</p>
-<p>本质上是consistency
-loss，对同一个网络的参数进行不同形式的输出，确保模型的稳定性，</p>
-<h2 id="article-5">Article 5</h2>
-<figure>
-<img lazyload="" src="/images/loading.svg" data-src="dualt.jpg" alt="7">
-<figcaption aria-hidden="true">7</figcaption>
-</figure>
-<p>单个MT的coupling problem</p>
-<p>每个epoch：对学生进行不同的augmentation（from the
-pool），轮流给两个teacher喂给参数</p>
-<p>【os：感觉看的不是很懂……两个teacher的伪标签如何生成和选择，轮流喂参数能否确保单个teacher的多样性，照理来说，应该两个teacher能够反映不同侧面的特征才对】</p>
-<h2 id="article-6">Article 6</h2>
-<p>总结迄今为止MT的核心，student给teacher喂参数，teacher给student喂伪标签，通过consistency
-loss更新student。问题：多样性与伪标签的质量</p>
-<figure>
-<img lazyload="" src="/images/loading.svg" data-src="mcf.jpg" alt="8">
-<figcaption aria-hidden="true">8</figcaption>
-</figure>
-<p>两个subnet。I.labeled data分别得到Lce和Ldice，经过CDR模块得到Lrec
-II.DPCLG比较Ldice，高的那个subnet模范为伪标签的生成器，返回伪标签，另一个则提供unlabeled预测结果，计算Lu</p>
-<p>CDR：二分类问题，如果两个分类器预测不同，必有一对一错。XOR两个subnet的结果得到掩码Mdiff，选出标签数据中的这部分做MSE（Lrec），有固定权重β</p>
-<h2 id="article-7-pmt">Article 7 PMT</h2>
-<p>是阿汐的paper！</p>
-<h2 id="adam">Adam</h2>
-<ul id="refplus"><li id="ref-Link1" data-num="1">[1]  https://arxiv.org/abs/1610.02242</li><li id="ref-Link2" data-num="2">[2]  https://arxiv.org/abs/1703.01780</li><li id="ref-Link3" data-num="3">[3]  https://arxiv.org/abs/1911.04252</li><li id="ref-Link4" data-num="4">[4]  https://arxiv.org/pdf/2009.04448</li><li id="ref-Link5" data-num="5">[5]  https://proceedings.neurips.cc/paper_files/paper/2023/file/7eeb42802d3750ca59e8a0523068e9e6-Paper-Conference.pdf</li><li id="ref-Link6" data-num="6">[6]  https://openaccess.thecvf.com/content/CVPR2023/papers/Wang_MCF_Mutual_Correction_Framework_for_Semi-Supervised_Medical_Image_Segmentation_CVPR_2023_paper.pdf</li></ul>
+            
 
     <style>
     #refplus, #refplus li{ 
@@ -586,7 +471,7 @@ II.DPCLG比较Ldice，高的那个subnet模范为伪标签的生成器，返回�
         
             <li>
                 <strong>更新于
-                    :</strong> 2024-11-17 16:02:27
+                    :</strong> 2024-12-09 10:23:56
             </li>
         
         <li>
@@ -722,7 +607,7 @@ II.DPCLG比较Ldice，高的那个subnet模范为伪标签的生成器，返回�
     <div class="post-toc">
         <div class="toc-title">目录</div>
         <div class="page-title">MT</div>
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#article-1"><span class="nav-text">Article 1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#article-2"><span class="nav-text">Article 2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#article-3"><span class="nav-text">Article 3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#article-4"><span class="nav-text">Article 4</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#article-5"><span class="nav-text">Article 5</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#article-6"><span class="nav-text">Article 6</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#article-7-pmt"><span class="nav-text">Article 7 PMT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#adam"><span class="nav-text">Adam</span></a></li></ol>
+        
 
     </div>
 </div>
@@ -755,7 +640,7 @@ II.DPCLG比较Ldice，高的那个subnet模范为伪标签的生成器，返回�
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        共撰写了 7 篇文章
+                        共撰写了 8 篇文章
                     </span>
                     
                 </p>
